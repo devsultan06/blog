@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function NavBar() {
     const pathname = usePathname();
-    const [isOpen, setIsOpen] = useState(false); 
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="flex items-center justify-between bg-black relative text-white py-4 px-[100px] border-t border-b border-dark20 max-900:px-[20px]">
@@ -39,12 +39,15 @@ export default function NavBar() {
             </nav>
 
             <button
-                className={`bg-yellow text-black px-4 py-2 rounded-md hover:bg-opacity-80 transition 
-                max-700:absolute max-700:top-[300px] max-700:transition-all duration-300 ease-in-out 
-                ${isOpen ? "max-700:opacity-100" : "max-700:opacity-0 max-700:pointer-events-none"}
-                `}
+                className={`relative overflow-hidden bg-yellow text-black px-4 py-2 rounded-md 
+  hover:bg-opacity-80 transition duration-300 ease-in-out
+  max-700:absolute max-700:top-[300px] max-700:transition-all 
+  ${isOpen ? "max-700:opacity-100" : "max-700:opacity-0 max-700:pointer-events-none"}
+  group
+  `}
             >
-                Contact Us
+                <span className="relative z-10">Contact Us</span>
+                <span className="absolute inset-0 bg-yellow bg-opacity-80  w-full h-full scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </button>
 
             <button
