@@ -17,6 +17,7 @@ export default {
         grey60: "#98989A",
         grey50: "#7E7E81",
         dark20: "#333333"
+        
       },
       screens: {
         "max-500": { max: "500px" },
