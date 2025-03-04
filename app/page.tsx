@@ -11,10 +11,10 @@ export default function Home() {
               <p className="text-lightgrey text-[20px]">Your Journey to Tomorrow Begins Here</p>
               <h1 className="text-[40px]">Explore the Frontiers of </h1>
               <h1 className="text-[40px]">Artificial Intelligence</h1>
-              <p className="text-lightgrey text-[17px] mt-[5px] max-900:w-full max-700:w-[50%] max-700:text-[12px]">Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.</p>
+              <p className="text-lightgrey text-[17px] mt-[5px] max-900:w-[100%] max-w-full overflow-hidden">Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.</p>
             </div>
 
-            <div className="box flex justify-between items-center mt-[80px] border-r border-t border-b border-dark20 max-900:w-full">
+            <div className="box flex justify-between items-center mt-[80px] border-r border-t border-b border-dark20 max-900:w-[100%]">
               <div className="item border-r border-dark20 w-full p-[50px] pl-[100px] max-900:pl-[20px] text-[25px] font-semibold">
                 300<span className="text-yellow">+</span>
                 <p className="text-lightgrey text-[15px] font-normal mt-[7px]">Resources Available</p>
