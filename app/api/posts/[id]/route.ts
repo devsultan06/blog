@@ -19,7 +19,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     });
 
     return NextResponse.json(updatedPost);
-  } catch (error) {
+  } catch{
     return NextResponse.json({ message: "Failed to update post" }, { status: 500 });
   }
 }
@@ -42,7 +42,7 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
     });
 
     return NextResponse.json({ message: "Post deleted successfully" }, { status: 200 });
-  } catch (error) {
+  } catch{
     return NextResponse.json({ message: "Failed to delete post" }, { status: 500 });
   }
 }
