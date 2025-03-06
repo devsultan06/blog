@@ -8,7 +8,7 @@ export async function GET() {
   try {
     const posts = await prisma.post.findMany();
     return NextResponse.json(posts);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: "Something went wrong" }, { status: 500 });
   }
 }
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { title, content } = body;
-    
+
     if (!title || !content) {
       return NextResponse.json({ message: "Title and content are required" }, { status: 400 });
     }
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json(newPost, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: "Something went wrong" }, { status: 500 });
   }
 }
