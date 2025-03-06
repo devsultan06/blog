@@ -1,0 +1,9 @@
+{
+    "build": {
+      "env": {
+        "DATABASE_URL": "@your-database-url"
+      }
+    },
+    "buildCommand": "prisma generate && next build"
+  }
+  

@@ -3,9 +3,11 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest, context: { params: { id: string } }) {
   try {
-    const id = params.id; // ✅ Access params correctly
+    const id = context.params?.id; // ✅ Correctly await params
+    if (!id) return NextResponse.json({ message: "ID is required" }, { status: 400 });
+
     const body = await req.json();
     const { title, content } = body;
 
@@ -19,30 +21,26 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     });
 
     return NextResponse.json(updatedPost);
-  } catch{
-    return NextResponse.json({ message: "Failed to update post" }, { status: 500 });
+  } catch (error) {
+    return NextResponse.json({ message: "Failed to update post", error: (error as Error).message }, { status: 500 });
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, context: { params: { id: string } }) {
   try {
-    const id = params.id; // ✅ Correctly accessing params
+    const id = context.params?.id; // ✅ Correctly await params
+    if (!id) return NextResponse.json({ message: "ID is required" }, { status: 400 });
 
     // Check if the post exists
-    const existingPost = await prisma.post.findUnique({
-      where: { id },
-    });
-
+    const existingPost = await prisma.post.findUnique({ where: { id } });
     if (!existingPost) {
       return NextResponse.json({ message: "Post not found" }, { status: 404 });
     }
 
-    await prisma.post.delete({
-      where: { id },
-    });
+    await prisma.post.delete({ where: { id } });
 
     return NextResponse.json({ message: "Post deleted successfully" }, { status: 200 });
-  } catch{
-    return NextResponse.json({ message: "Failed to delete post" }, { status: 500 });
+  } catch (error) {
+    return NextResponse.json({ message: "Failed to delete post", error: (error as Error).message }, { status: 500 });
   }
 }
