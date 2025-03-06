@@ -1,6 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        setPosts(data); // ✅ State update
+        console.log("Fetched posts:", data); // ✅ Log fetched data instead
+      })
+      .catch((err) => console.error("Error fetching posts:", err));
+  }, []);
+
+  // ✅ Log updated state when `posts` changes
+  useEffect(() => {
+    console.log("Updated posts state:", posts);
+  }, [posts]);
   return (
     <div className="home">
 
