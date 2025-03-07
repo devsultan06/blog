@@ -1,6 +1,7 @@
 "use client";
 
 import { features2 } from "@/data/features2";
+import Explore from "@components/home/Explore";
 import FeaturesSection from "@components/home/FeatureSection";
 import FeatureSection2 from "@components/home/FeatureSection2";
 import HeroSection from "@components/home/HeroSection";
@@ -63,10 +64,13 @@ export default function Home() {
               <Image src="/images/people.png" alt="Arrow" width={150} height={150} />
               <h1 className="text-[20px] my-[10px]">Explore 1000+ resources</h1>
               <p className="text-lightgrey text-[14px]">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
-              <button className="flex justify-between items-center gap-1 mt-[20px] border border-dark20 text-lightgrey px-4 py-3 rounded-md hover:bg-yellow-600 transition">
-                <span className="font-medium">Explore Resources</span>
-                <Image src="/images/arrow.png" alt="Arrow" width={20} height={20} />
+              <button className="relative overflow-hidden flex justify-between items-center gap-1 mt-[20px] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
+                <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+
+                <span className="relative z-10 font-medium group-hover:text-white transition duration-300">Explore Resources</span>
+                <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
               </button>
+
 
             </div>
 
@@ -78,7 +82,7 @@ export default function Home() {
 
       <HeroSection />
 
-      <section className="bg-deepblack pb-[100px]">
+      <section className="bg-deepblack">
 
         {features2.map((section, index) => (
           <FeatureSection2 key={index} {...section} />
@@ -86,6 +90,8 @@ export default function Home() {
 
 
       </section>
+
+      <Explore />
 
     </div>
 
