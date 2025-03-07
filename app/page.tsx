@@ -1,6 +1,7 @@
 "use client";
 
 import FeaturesSection from "@components/home/FeatureSection";
+import HeroSection from "@components/home/HeroSection";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -72,6 +73,8 @@ export default function Home() {
       </header>
 
       <FeaturesSection />
+
+      <HeroSection />
 
     </div>
 
