@@ -1,6 +1,8 @@
 "use client";
 
+import FeaturesSection from "@components/home/FeatureSection";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -22,7 +24,7 @@ export default function Home() {
     console.log("Updated posts state:", posts);
   }, [posts]);
   return (
-    <div className="home">
+    <div className="home text-white">
 
       <header className="bg-deepblack text-white border-b border-dark20">
         <div className="box flex justify-between items-start max-900:block">
@@ -69,9 +71,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="h-[50vh] bg-deepblack">
-
-      </section>
+      <FeaturesSection />
 
     </div>
 
