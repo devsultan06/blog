@@ -1,6 +1,8 @@
 "use client";
 
+import { features2 } from "@/data/features2";
 import FeaturesSection from "@components/home/FeatureSection";
+import FeatureSection2 from "@components/home/FeatureSection2";
 import HeroSection from "@components/home/HeroSection";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,6 +77,15 @@ export default function Home() {
       <FeaturesSection />
 
       <HeroSection />
+
+      <section className="bg-deepblack pb-[100px]">
+
+        {features2.map((section, index) => (
+          <FeatureSection2 key={index} {...section} />
+        ))}
+
+
+      </section>
 
     </div>
 
