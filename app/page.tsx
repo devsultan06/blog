@@ -60,13 +60,16 @@ export default function Home() {
 
           <div className="item w-1/3 flex flex-col items-start max-900:w-full max-900:pb-[30px]">
             <Image src="/images/ray.png" alt="AI Illustration" width={300} height={300} />
-            <div className="pl-[40px] mt-[-30px]">
+            <div className="pl-[40px] mt-[-30px] max-900:px-[20px] ">
               <Image src="/images/people.png" alt="Arrow" width={150} height={150} />
               <h1 className="text-[20px] my-[10px]">Explore 1000+ resources</h1>
               <p className="text-lightgrey text-[14px]">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
-              <button className="relative overflow-hidden flex justify-between items-center gap-1 mt-[20px] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
+              
+              <button className="relative overflow-hidden flex justify-center  max-900:w-[100%] items-center gap-1 mt-[20px] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
+                {/* Background Slide Effect */}
                 <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
+                {/* Text and Icon */}
                 <span className="relative z-10 font-medium group-hover:text-white transition duration-300">Explore Resources</span>
                 <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
               </button>
