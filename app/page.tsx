@@ -1,10 +1,13 @@
 "use client";
 
 import { features2 } from "@/data/features2";
+import BlogList from "@components/home/BlogList";
 import Explore from "@components/home/Explore";
 import FeaturesSection from "@components/home/FeatureSection";
 import FeatureSection2 from "@components/home/FeatureSection2";
+import GateWay from "@components/home/GateWay";
 import HeroSection from "@components/home/HeroSection";
+import Tabs from "@components/home/Tabs";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -64,7 +67,7 @@ export default function Home() {
               <Image src="/images/people.png" alt="Arrow" width={150} height={150} />
               <h1 className="text-[20px] my-[10px]">Explore 1000+ resources</h1>
               <p className="text-lightgrey text-[14px]">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
-              
+
               <button className="relative overflow-hidden flex justify-center  max-900:w-[100%] items-center gap-1 mt-[20px] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
                 {/* Background Slide Effect */}
                 <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
@@ -95,6 +98,16 @@ export default function Home() {
       </section>
 
       <Explore />
+
+      <section className="blogs bg-deepblack">
+
+        <Tabs />
+
+        <BlogList />
+
+      </section>
+
+      <GateWay />
 
     </div>
 

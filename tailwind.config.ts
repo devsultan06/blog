@@ -17,16 +17,16 @@ export default {
         grey60: "#98989A",
         grey50: "#7E7E81",
         dark20: "#333333"
-        
+
       },
       screens: {
         "max-500": { max: "500px" },
-        "max-400" : { max: "400px" },
-        "max-700" : { max: "700px" },
-        "max-900" : { max: "900px" },
-        "max-1000" : { max: "1000px" },
+        "max-400": { max: "400px" },
+        "max-700": { max: "700px" },
+        "max-900": { max: "900px" },
+        "max-1000": { max: "1000px" },
       }
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 } satisfies Config;
