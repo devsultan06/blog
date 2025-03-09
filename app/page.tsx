@@ -15,6 +15,8 @@ import { useEffect, useState } from "react";
 import Resources from "@components/home/Resources";
 import RealWorld from "@components/home/RealWorld";
 import Testimonails from "@components/home/Testimonials";
+import Future from "@components/home/Future";
+import Footer from "@components/layout/Footer";
 
 export default function Home() {
 
@@ -26,13 +28,12 @@ export default function Home() {
     fetch("/api/posts")
       .then((res) => res.json())
       .then((data) => {
-        setPosts(data); // ✅ State update
-        console.log("Fetched posts:", data); // ✅ Log fetched data instead
+        setPosts(data);
+        console.log("Fetched posts:", data);
       })
       .catch((err) => console.error("Error fetching posts:", err));
   }, []);
 
-  // ✅ Log updated state when `posts` changes
   useEffect(() => {
     console.log("Updated posts state:", posts);
   }, [posts]);
@@ -75,10 +76,8 @@ export default function Home() {
               <p className="text-lightgrey text-[14px]">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
 
               <button className="relative overflow-hidden flex justify-center  max-900:w-[100%] items-center gap-1 mt-[20px] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
-                {/* Background Slide Effect */}
                 <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
-                {/* Text and Icon */}
                 <span className="relative z-10 font-medium group-hover:text-white transition duration-300">Explore Resources</span>
                 <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
               </button>
@@ -125,6 +124,10 @@ export default function Home() {
 
       <RealWorld />
       <Testimonails />
+
+      <Future />
+
+      <Footer />
 
     </div>
 

@@ -15,6 +15,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <link rel="icon" href="/images/logo3.png" type="image/x-icon" />
+
+            </head>
+
             <body
             >
                 <SubscribeBanner />
