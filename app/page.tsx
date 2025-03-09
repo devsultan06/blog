@@ -14,6 +14,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Resources from "@components/home/Resources";
 import RealWorld from "@components/home/RealWorld";
+import Testimonails from "@components/home/Testimonials";
 
 export default function Home() {
 
@@ -123,6 +124,7 @@ export default function Home() {
       </section>
 
       <RealWorld />
+      <Testimonails />
 
     </div>
 

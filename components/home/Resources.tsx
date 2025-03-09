@@ -35,7 +35,6 @@ const Resources: React.FC<ResourceItem> = ({
 }) => {
     return (
         <div className="box flex justify-between items-start max-900:block font-inter ">
-            {/* Left Section */}
             <div className="item border border-dark20 pr-8 w-1/3 pl-[100px] h-[650px] max-900:h-[400px] flex flex-col justify-center max-900:w-full max-900:pl-[20px]">
                 <Image src={icon} alt="Feature Icon" width={50} height={50} className="mb-[30px]" />
                 <h1 className="text-white text-xl font-semibold mb-[10px] font-kumbh">{title}</h1>
@@ -59,7 +58,6 @@ const Resources: React.FC<ResourceItem> = ({
                 </div>
             </div>
 
-            {/* Right Section with Quality Boxes */}
             <div className="item w-2/3 max-900:w-full max-900:h-auto pr-[100px] h-[650px]  pl-[60px] flex flex-col justify-center border border-dark20 max-900:p-[20px]">
                 <div className="flex gap-[20px] max-900:block ">
                     <div className="w-[20%] max-900:w-full max-900:mb-[10px]">
@@ -89,7 +87,7 @@ const Resources: React.FC<ResourceItem> = ({
                         </div>
 
                         <div className="">
-                            <button className="relative overflow-hidden flex items-center justify-center gap-1 max-900:w-[100%] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
+                            <button className="relative bg-deepblack overflow-hidden flex items-center justify-center gap-1 max-900:w-[100%] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
                                 <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
                                 <span className="relative z-10 font-medium group-hover:text-white transition duration-300">Preview</span>
