@@ -8,7 +8,7 @@ const GateWay = () => {
                     <button className="bg-dark20 text-white px-2 py-[2px] rounded-[1px] hover:bg-opacity-80 transition duration-300 ease-in-out">
                         Your Gateway to In-Depth Information
                     </button>
-                    <h1 className="text-[35px] text-white w-[70%] max-900:w-full ">Unlock Valuable Knowledge with FutureTech's Resources</h1>
+                    <h1 className="text-[35px] text-white w-[70%] max-900:w-full max-900:text-[30px] font-kumbh ">Unlock Valuable Knowledge with FutureTech's Resources</h1>
 
                 </div>
                 <div className="item max-900:w-[100%]">

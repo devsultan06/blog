@@ -25,7 +25,11 @@ export default {
         "max-700": { max: "700px" },
         "max-900": { max: "900px" },
         "max-1000": { max: "1000px" },
-      }
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        kumbh: ["Kumbh Sans", "sans-serif"],
+      },
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],

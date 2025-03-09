@@ -1,6 +1,7 @@
 "use client";
 
 import { features2 } from "@/data/features2";
+import { resourcesData } from "@/data/resourcesData";
 import BlogList from "@components/home/BlogList";
 import Explore from "@components/home/Explore";
 import FeaturesSection from "@components/home/FeatureSection";
@@ -11,8 +12,12 @@ import Tabs from "@components/home/Tabs";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Resources from "@components/home/Resources";
+import RealWorld from "@components/home/RealWorld";
 
 export default function Home() {
+
+  const [activeTab, setActiveTab] = useState("All");
 
   const [posts, setPosts] = useState([]);
 
@@ -37,8 +42,8 @@ export default function Home() {
         <div className="box flex justify-between items-start max-900:block">
           <div className="item flex-1 border-r border-b border-t border-dark20  pt-[100px] max-900:pt-[50px]">
             <div className="pl-[100px] max-900:pl-[20px]">
-              <p className="text-lightgrey text-[20px]">Your Journey to Tomorrow Begins Here</p>
-              <h1 className="text-[40px] max-900:text-[35px]">Explore the Frontiers of</h1>
+              <p className="text-lightgrey text-[20px] font-kumbh">Your Journey to Tomorrow Begins Here</p>
+              <h1 className="text-[40px] max-900:text-[35px] font-kumbh">Explore the Frontiers of</h1>
               <h1 className="text-[40px] max-900:text-[35px]">Artificial Intelligence</h1>
               <p className="text-lightgrey text-[17px] mt-[5px]">Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.</p>
             </div>
@@ -101,13 +106,23 @@ export default function Home() {
 
       <section className="blogs bg-deepblack">
 
-        <Tabs />
-
-        <BlogList />
+        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+        <BlogList activeTab={activeTab} />
 
       </section>
 
       <GateWay />
+
+      <section className="bg-deepblack">
+
+        {resourcesData.map((resources, index) => (
+          <Resources key={index} {...resources} />
+        ))}
+
+
+      </section>
+
+      <RealWorld />
 
     </div>
 
