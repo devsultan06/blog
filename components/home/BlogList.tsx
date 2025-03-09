@@ -21,7 +21,7 @@ const BlogList = ({ activeTab }: { activeTab: string }) => {
                             <div className="max-900:flex max-900:items-center max-900:justify-end">
                                 <button className="relative overflow-hidden flex items-center justify-center gap-1 border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
                                     <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
-                                    <span className="relative z-10 font-medium group-hover:text-white transition duration-300">View Blog</span>
+                                    <span className="relative z-10 font-medium group-hover:text-black transition duration-300">View Blog</span>
                                     <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
                                 </button>
                             </div>

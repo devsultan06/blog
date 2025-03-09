@@ -3,9 +3,10 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+// UPDATE method (update a post)
 export async function PUT(req: NextRequest, context: { params: { id: string } }) {
   try {
-    const id = context.params?.id; // ✅ Correctly await params
+    const id = context.params?.id;
     if (!id) return NextResponse.json({ message: "ID is required" }, { status: 400 });
 
     const body = await req.json();
@@ -26,9 +27,10 @@ export async function PUT(req: NextRequest, context: { params: { id: string } })
   }
 }
 
+// DELETE method (delete a post)
 export async function DELETE(req: NextRequest, context: { params: { id: string } }) {
   try {
-    const id = context.params?.id; // ✅ Correctly await params
+    const id = context.params?.id;
     if (!id) return NextResponse.json({ message: "ID is required" }, { status: 400 });
 
     // Check if the post exists
