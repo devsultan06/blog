@@ -6,7 +6,7 @@ const Future = () => {
     return (
         <section className="bg-black pt-[60px] pb-[60px] px-[100px] max-900:px-[20px] ">
             <div className="flex  items-center max-900:block gap-9">
-                <div className="item max-900:w-[100%] flex gap-9 items-center ">
+                <div className="item max-900:w-[100%] flex gap-3 items-center ">
                     <Image src="/images/logo3.png" alt="Future" width={100} height={100} />
                     <button className="hidden max-900:block bg-dark20 text-white px-2 py-[2px] rounded-[1px] hover:bg-opacity-80 transition duration-300 ease-in-out">
                         Learn, Connect, and Innovate

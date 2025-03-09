@@ -45,8 +45,8 @@ export default function Home() {
           <div className="item flex-1 border-r border-b border-t border-dark20  pt-[100px] max-900:pt-[50px]">
             <div className="pl-[100px] max-900:pl-[20px]">
               <p className="text-lightgrey text-[20px] font-kumbh">Your Journey to Tomorrow Begins Here</p>
-              <h1 className="text-[40px] max-900:text-[35px] font-kumbh">Explore the Frontiers of</h1>
-              <h1 className="text-[40px] max-900:text-[35px]">Artificial Intelligence</h1>
+              <h1 className="text-[40px] max-900:text-[33px] font-kumbh">Explore the Frontiers of</h1>
+              <h1 className="text-[40px] max-900:text-[33px]">Artificial Intelligence</h1>
               <p className="text-lightgrey text-[17px] mt-[5px]">Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.</p>
             </div>
 
