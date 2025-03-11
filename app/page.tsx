@@ -127,7 +127,6 @@ export default function Home() {
 
       <Future />
 
-      <Footer />
 
     </div>
 
