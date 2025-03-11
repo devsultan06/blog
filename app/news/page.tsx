@@ -38,7 +38,7 @@ export default function News() {
                         </p>
                     </div>
 
-                    <div className="text-white flex gap-9">
+                    <div className="text-white flex gap-9 max-900:gap-4">
                         <div className="category">
                             <p className="text-lightgrey">Category</p>
                             <p className="">Climate Change</p>
@@ -69,7 +69,7 @@ export default function News() {
                         </div>
                         <div>
                             <div className="item max-900:w-[100%]">
-                                <button className="relative overflow-hidden mt-[20px] max-900:w-[100%] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
+                                <button className="relative overflow-hidden max-900:w-[100%] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
                                     <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
                                     <span className="relative z-10 font-medium group-hover:text-black transition duration-300">Read More</span>
