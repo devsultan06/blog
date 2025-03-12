@@ -1,7 +1,26 @@
 import Image from "next/image";
-import { blogPosts } from "@/data/blogPosts";
 
-const BlogList = ({ activeTab }: { activeTab: string }) => {
+
+interface BlogPost {
+    id: number;
+    adminName: string;
+    niche: string;
+    adminImage: string;
+    date: string;
+    title: string;
+    description: string;
+    likes: number | string; // Ensure it's a number
+    comments: number | string; // Ensure it's a number
+    shares: number | string; // Ensure it's a number
+    isLiked?: boolean; // Make it optional but always boolean
+}
+
+interface BlogListProps {
+    activeTab: string;
+    blogPosts: BlogPost[];
+    buttonText: string
+}
+const BlogList: React.FC<BlogListProps> = ({ activeTab, blogPosts, buttonText }) => {
     const filteredBlogs = activeTab === "All" ? blogPosts : blogPosts.filter(post => post.niche === activeTab);
 
     return (
@@ -21,7 +40,7 @@ const BlogList = ({ activeTab }: { activeTab: string }) => {
                             <div className="max-900:flex max-900:items-center max-900:justify-end">
                                 <button className="relative overflow-hidden flex items-center justify-center gap-1 border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
                                     <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
-                                    <span className="relative z-10 font-medium group-hover:text-black transition duration-300">View Blog</span>
+                                    <span className="relative z-10 font-medium group-hover:text-black transition duration-300">{buttonText}</span>
                                     <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
                                 </button>
                             </div>

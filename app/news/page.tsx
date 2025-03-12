@@ -1,6 +1,18 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+
+import NewsArticle from "../../components/news/NewsArticle";
+import HeadLines from "../../components/news/HeadLines";
+import Tabs from "@components/layout/Tabs";
+import BlogList from "@components/layout/BlogList";
+import { tab2 } from "@/data/tabs";
+import { blogPosts2 } from "@/data/blogPosts";
 
 export default function News() {
+    const [activeTab, setActiveTab] = useState("All");
+
     return (
         <div className="news bg-deepblack text-white ">
 
@@ -81,6 +93,11 @@ export default function News() {
 
                 </div>
             </div>
+
+            <NewsArticle />
+            <HeadLines />
+            <Tabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={tab2} />
+            <BlogList activeTab={activeTab} blogPosts={blogPosts2} buttonText="Read More" />
         </div>
     );
 }   

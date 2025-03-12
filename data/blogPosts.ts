@@ -37,3 +37,43 @@ export const blogPosts = [
     shares: "2k",
   },
 ];
+
+export const blogPosts2 = [
+  {
+    id: 1,
+    adminName: "John Techson",
+    niche: "Technology",
+    adminImage: "/images/admin1.png",
+    date: "October 15, 2023",
+    title: "Tech Giants Announce New Product Line",
+    description: "Explore the latest innovations from tech industry leaders, unveiling new products that promise to transform the digital landscape.",
+    likes: "24.5k",
+    comments: "50",
+    shares: "20",
+  },
+  {
+    id: 2,
+    adminName: "Sarah Ethicist",
+    niche: "Health",
+    adminImage: "/images/admin2.png",
+    date: "October 11, 2023",
+    title: "The Future of Autonomous Vehicles",
+    description: "An in-depth analysis of the rapid advancements in autonomous vehicle technology and their impact on transportation.",
+    likes: "32k",
+    comments: "72",
+    shares: "18",
+  },
+  {
+    id: 3,
+    adminName: "Astronomer X",
+    niche: "Sports",
+    adminImage: "/images/admin3.png",
+    date: "December 10, 2023",
+    title: "Tech Startups Secure Record Funding",
+    description: "An overview of the recent surge in funding for tech startups, shaping the entrepreneurial landscape.",
+    likes: "20k",
+    comments: "31",
+    shares: "12",
+  },
+];
+

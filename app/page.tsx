@@ -2,13 +2,13 @@
 
 import { features2 } from "@/data/features2";
 import { resourcesData } from "@/data/resourcesData";
-import BlogList from "@components/home/BlogList";
+import BlogList from "@components/layout/BlogList";
 import Explore from "@components/home/Explore";
 import FeaturesSection from "@components/home/FeatureSection";
 import FeatureSection2 from "@components/home/FeatureSection2";
 import GateWay from "@components/home/GateWay";
 import HeroSection from "@components/home/HeroSection";
-import Tabs from "@components/home/Tabs";
+import Tabs from "@components/layout/Tabs";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -17,6 +17,8 @@ import RealWorld from "@components/home/RealWorld";
 import Testimonails from "@components/home/Testimonials";
 import Future from "@components/home/Future";
 import Footer from "@components/layout/Footer";
+import { tab1 } from "@/data/tabs";
+import { blogPosts } from "@/data/blogPosts";
 
 export default function Home() {
 
@@ -106,8 +108,8 @@ export default function Home() {
 
       <section className="blogs bg-deepblack">
 
-        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        <BlogList activeTab={activeTab} />
+        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={tab1} />
+        <BlogList activeTab={activeTab} blogPosts={blogPosts} buttonText="View Blog"/>
 
       </section>
 
