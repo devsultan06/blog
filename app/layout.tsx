@@ -25,8 +25,11 @@ export default function RootLayout({
             >
                 <SubscribeBanner />
                 <NavBar />
-                {children}
-                <Footer/>
+                <div className="pt-[100px] bg-deepblack">
+                    {children}
+
+                </div>
+                <Footer />
             </body>
         </html>
     );

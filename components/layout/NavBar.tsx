@@ -10,8 +10,12 @@ export default function NavBar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
 
+    const handleLinkClick = () => {
+        setIsOpen(false); 
+    };
+
     return (
-        <div className="flex items-center justify-between bg-black relative text-white py-4 px-[100px] border-t border-b border-dark20 max-900:px-[20px]">
+        <div className={`flex fixed top-[40px] left-0 z-50 right-0 items-center justify-between bg-black text-white py-4 px-[100px] border-t border-b border-dark20 max-900:px-[20px] transition-all duration-300`}>
             <Link href="/">
                 <div className="flex items-center gap-4">
                     <Image src="/images/Logo.png" alt="Logo" width={130} height={130} />
@@ -27,6 +31,7 @@ export default function NavBar() {
                     <Link
                         key={link.href}
                         href={link.href}
+                        onClick={handleLinkClick}
                         className={`py-2 px-4 rounded-md transition hover:text-yellow 
                             ${pathname === link.href
                                 ? "bg-deepblack text-white border border-dark20"
