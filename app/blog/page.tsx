@@ -98,7 +98,7 @@ export default function Blog() {
 
                         <div className="table mt-[50px] max-900:w-full">
                             <p className="mb-[20px]">Table of Contents</p>
-                            <ul className="bg-black text-lightgrey p-6 text-[15px] rounded-lg space-y-[24.2px] list-disc list-outside">
+                            <ul className="bg-black text-white p-6 text-[15px] rounded-lg space-y-[24.2px] list-disc list-outside">
                                 <li>Introduction</li>
                                 <li>AI in Diagnostic Imaging</li>
                                 <li>Predictive Analytics and Disease Prevention</li>
