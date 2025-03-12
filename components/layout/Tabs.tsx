@@ -1,9 +1,8 @@
-import { useState } from "react";
 
 interface TabsProps {
     activeTab: string;
     setActiveTab: (tab: string) => void;
-    tabs: string[];  // Accept an array of tab labels as a prop
+    tabs: string[]; 
 }
 
 const Tabs: React.FC<TabsProps> = ({ activeTab, setActiveTab, tabs }) => {

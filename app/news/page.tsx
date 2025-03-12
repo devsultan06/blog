@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
 import NewsArticle from "../../components/news/NewsArticle";
 import HeadLines from "../../components/news/HeadLines";
 import Tabs from "@components/layout/Tabs";
