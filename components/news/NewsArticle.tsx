@@ -16,11 +16,11 @@ const NewsArticle = () => {
                         />
                         <h3 className="text-white mt-4 mb-[10px]">{article.title}</h3>
                         <p className="text-lightgrey">{article.category}</p>
-                        <div className="flex justify-between items-center mt-[30px]">
+                        <div className="flex justify-between items-center mt-[10px]">
                             <div>
                                 <div className="icons flex gap-2">
                                     <div className="like flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                                        <Image src="/images/like.png" alt="Like" width={20} height={20} />
+                                        <Image src="/images/liked.png" alt="Like" width={20} height={20} />
                                         <p className="text-lightgrey">10k</p>
                                     </div>
 
