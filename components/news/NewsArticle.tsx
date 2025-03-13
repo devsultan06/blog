@@ -1,5 +1,5 @@
 import { newsArticles } from "@/data/newsArticle"
-import Image from "next/image"
+import CustomImage from "@components/ui/CustomImage";
 
 const NewsArticle = () => {
     return (
@@ -7,7 +7,7 @@ const NewsArticle = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {newsArticles.map((article) => (
                     <div key={article.id} className="p-4 rounded-lg">
-                        <Image
+                        <CustomImage
                             src={article.image}
                             alt={article.title}
                             width={400}
@@ -20,12 +20,12 @@ const NewsArticle = () => {
                             <div>
                                 <div className="icons flex gap-2">
                                     <div className="like flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                                        <Image src="/images/liked.png" alt="Like" width={20} height={20} />
+                                        <CustomImage src="/images/liked.png" alt="Like" width={20} height={20} />
                                         <p className="text-lightgrey">10k</p>
                                     </div>
 
                                     <div className="share flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                                        <Image src="/images/share.png" alt="Share" width={20} height={20} />
+                                        <CustomImage src="/images/share.png" alt="Share" width={20} height={20} />
                                         <p className="text-lightgrey">200</p>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@ const NewsArticle = () => {
                                     <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
                                     <span className="relative z-10 font-medium group-hover:text-black transition duration-300">Read More</span>
-                                    <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
+                                    <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
                                 </button>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 import { footerLinks } from "@/data/footerLinks";
 import { FooterLink, FooterSection } from "@/types/footerLinks";
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
-import Image from 'next/image';
+import CustomImage from "@components/ui/CustomImage";
 
 const Footer = () => {
 
@@ -24,7 +24,7 @@ const Footer = () => {
                                             </span>
 
                                         )}
-                                        {link.icon && (<Image src="/images/arrow.png" alt={link.name} width={20} height={20} />)}
+                                        {link.icon && (<CustomImage src="/images/arrow.png" alt={link.name} width={20} height={20} />)}
                                     </a>
                                 </li>
                             ))}

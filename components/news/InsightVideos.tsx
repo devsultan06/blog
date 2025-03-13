@@ -1,5 +1,5 @@
 import { insightvideoPosts } from "@/data/insightVideoPosts";
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 
 
 const InsightVideos = () => {
@@ -14,7 +14,7 @@ const InsightVideos = () => {
                         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/80 to-transparent rounded-b-md"></div>
 
                         <div className="absolute bottom-2 left-0 right-0 flex justify-between items-center p-2">
-                            <Image src="/images/play.png" alt="Play" width={50} height={50} className="cursor-pointer" />
+                            <CustomImage src="/images/play.png" alt="Play" width={50} height={50} className="cursor-pointer" />
                             <span className="text-sm text-lightgrey">{video.duration}</span>
                         </div>
                     </div>

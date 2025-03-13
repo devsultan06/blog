@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 
 interface ResourceStats {
     total: string;
@@ -36,7 +36,7 @@ const Resources: React.FC<ResourceItem> = ({
     return (
         <div className="box flex justify-between items-start max-900:block font-inter ">
             <div className="item border border-dark20 pr-8 w-1/3 pl-[100px] h-[650px] max-900:h-[400px] flex flex-col justify-center max-900:w-full max-900:pl-[20px]">
-                <Image src={icon} alt="Feature Icon" width={50} height={50} className="mb-[30px]" />
+                <CustomImage src={icon} alt="Feature Icon" width={50} height={50} className="mb-[30px]" />
                 <h1 className="text-white text-xl font-semibold mb-[10px] font-kumbh">{title}</h1>
                 <p className="text-lightgrey">{description}</p>
                 <div className="item  max-900:w-[100%]">
@@ -44,7 +44,7 @@ const Resources: React.FC<ResourceItem> = ({
                         <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
                         <span className="relative z-10 font-medium group-hover:text-black transition duration-300">{downloadText}</span>
-                        <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
+                        <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
                     </button>
                 </div>
 
@@ -54,7 +54,8 @@ const Resources: React.FC<ResourceItem> = ({
                         <h1 className="font-bold">{downloadedBy}</h1>
                     </div>
 
-                    <Image src={image2} alt="People" width={150} height={150} />
+                    <CustomImage src={image2} alt="People" width={150} height={150} priority
+                        style={{ display: "block" }} />
                 </div>
             </div>
 
@@ -68,7 +69,8 @@ const Resources: React.FC<ResourceItem> = ({
                     </div>
                 </div>
 
-                <Image src={image} alt="Quality Image" width={300} height={300} className="w-full h-auto mt-[20px]" />
+                <CustomImage src={image} alt="Quality Image" width={300} height={300} className="w-full h-auto mt-[20px]" priority
+                    style={{ display: "block" }} />
 
                 <div className="flex justify-between mt-[20px] gap-4 max-900:block">
                     <div className=" bg-black p-[15px] rounded-[10px] border border-dark20 w-1/3 max-900:w-full max-900:mb-[20px]">
@@ -91,7 +93,7 @@ const Resources: React.FC<ResourceItem> = ({
                                 <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
                                 <span className="relative z-10 font-medium group-hover:text-black transition duration-300">Preview</span>
-                                <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/preview.png" alt="Arrow" width={20} height={20} />
+                                <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/preview.png" alt="Arrow" width={20} height={20} />
                             </button>
                         </div>
                     </div>

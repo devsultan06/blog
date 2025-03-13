@@ -1,5 +1,5 @@
 import { testimonial } from "@/data/testimonial";
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 
 const Testimonials = () => {
     return (
@@ -7,7 +7,7 @@ const Testimonials = () => {
             {testimonial.map((testimonial) => (
                 <div key={testimonial.id} className="px-6 py-10 border border-dark20 bg-dark  text-center">
                     <div className="flex gap-2 justify-center items-center ">
-                        <Image
+                        <CustomImage
                             src={testimonial.image}
                             alt={testimonial.name}
                             width={60}

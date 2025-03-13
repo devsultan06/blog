@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/navLinks";
@@ -11,14 +11,15 @@ export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleLinkClick = () => {
-        setIsOpen(false); 
+        setIsOpen(false);
     };
 
     return (
         <div className={`flex fixed top-[40px] left-0 z-50 right-0 items-center justify-between bg-black text-white py-4 px-[100px] border-t border-b border-dark20 max-900:px-[20px] transition-all duration-300`}>
             <Link href="/">
                 <div className="flex items-center gap-4">
-                    <Image src="/images/Logo.png" alt="Logo" width={130} height={130} />
+                    <CustomImage src="/images/Logo.png" alt="Logo" width={130} height={130} priority
+                        style={{ display: "block" }} />
                 </div>
             </Link>
 
@@ -59,7 +60,7 @@ export default function NavBar() {
                 className="hidden max-700:block text-white"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <Image src="/images/toggle.png" alt="Menu" width={25} height={25} />
+                <CustomImage src="/images/toggle.png" alt="Menu" width={25} height={25} />
             </button>
         </div>
     );

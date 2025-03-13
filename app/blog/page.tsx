@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 
 export default function Blog() {
     return (
@@ -46,7 +46,7 @@ export default function Blog() {
                             <button className="relative overflow-hidden flex items-center justify-center gap-1 border border-dark20 text-lightgrey px-6 py-3 rounded-md transition duration-300 ease-in-out group">
                                 <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
                                 <span className="relative z-10 font-medium group-hover:text-black transition duration-300">Read More</span>
-                                <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/down.png" alt="Arrow" width={20} height={20} />
+                                <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/down.png" alt="Arrow" width={20} height={20} />
                             </button>
                         </div>
                     </div>
@@ -57,15 +57,15 @@ export default function Blog() {
                 <div className="item flex-[1] ">
                     <div className="icons flex gap-2 border-b border-dark20 px-[60px] py-[50px] max-900:px-0 max-900:justify-center">
                         <div className="like flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                            <Image src="/images/liked.png" alt="Like" width={20} height={20} />
+                            <CustomImage src="/images/liked.png" alt="Like" width={20} height={20} />
                             <p className="text-lightgrey">10.6k</p>
                         </div>
                         <div className="comment flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                            <Image src="/images/read.png" alt="Comment" width={20} height={20} />
+                            <CustomImage src="/images/read.png" alt="Comment" width={20} height={20} />
                             <p className="text-lightgrey">50k</p>
                         </div>
                         <div className="share flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                            <Image src="/images/share.png" alt="Share" width={20} height={20} />
+                            <CustomImage src="/images/share.png" alt="Share" width={20} height={20} />
                             <p className="text-lightgrey">2k</p>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 
 interface FeatureItem {
     title: string;
@@ -16,7 +16,7 @@ const FeatureSection2: React.FC<FeatureSectionProps> = ({ icon, heading, subtext
     return (
         <div className="box flex justify-between items-start max-900:block ">
             <div className="item border border-dark20 pr-8 w-1/3 pl-[100px] h-[400px] flex flex-col justify-center max-900:w-full max-900:pl-[20px]">
-                <Image src={icon} alt="Feature Icon" width={50} height={50} className="mb-[30px]" />
+                <CustomImage src={icon} alt="Feature Icon" width={50} height={50} className="mb-[30px]" />
                 <h1 className="text-white text-xl font-semibold mb-[10px] font-kumbh">{heading}</h1>
                 <p className="text-lightgrey">{subtext}</p>
             </div>

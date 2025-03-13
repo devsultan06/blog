@@ -9,8 +9,7 @@ import FeatureSection2 from "@components/home/FeatureSection2";
 import GateWay from "@components/home/GateWay";
 import HeroSection from "@components/home/HeroSection";
 import Tabs from "@components/layout/Tabs";
-import Image from "next/image";
-import Link from "next/link";
+import CustomImage from "@components/ui/CustomImage";
 import { useEffect, useState } from "react";
 import Resources from "@components/home/Resources";
 import RealWorld from "@components/home/RealWorld";
@@ -71,9 +70,9 @@ export default function Home() {
           </div>
 
           <div className="item w-1/3 flex flex-col items-start max-900:w-full max-900:pb-[30px]">
-            <Image src="/images/ray.png" alt="AI Illustration" width={300} height={300} />
+            <CustomImage src="/images/ray.png" alt="AI Illustration" width={300} height={300} />
             <div className="pl-[40px] mt-[-30px] max-900:px-[20px] ">
-              <Image src="/images/people.png" alt="Arrow" width={150} height={150} />
+              <CustomImage src="/images/people.png" alt="Arrow" width={150} height={150} />
               <h1 className="text-[20px] my-[10px]">Explore 1000+ resources</h1>
               <p className="text-lightgrey text-[14px]">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
 
@@ -81,7 +80,7 @@ export default function Home() {
                 <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
                 <span className="relative z-10 font-medium group-hover:text-black transition duration-300">Explore Resources</span>
-                <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
+                <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
               </button>
 
 
@@ -109,7 +108,7 @@ export default function Home() {
       <section className="blogs bg-deepblack">
 
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={tab1} />
-        <BlogList activeTab={activeTab} blogPosts={blogPosts} buttonText="View Blog"/>
+        <BlogList activeTab={activeTab} blogPosts={blogPosts} buttonText="View Blog" />
 
       </section>
 

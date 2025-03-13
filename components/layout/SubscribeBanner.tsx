@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -13,10 +13,8 @@ const SubscribeBanner = () => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling Down → Hide Banner
                 setShowBanner(false);
             } else {
-                // Scrolling Up → Show Banner
                 setShowBanner(true);
             }
             setLastScrollY(currentScrollY);
@@ -40,7 +38,7 @@ const SubscribeBanner = () => {
                         <span className="max-500:hidden">New & Latest </span>
                         For Blogs and Resources
                     </span>
-                    <Image src="/images/arrow.png" alt="Logo" width={16.5} height={16.5} />
+                    <CustomImage src="/images/arrow.png" alt="Logo" width={16.5} height={16.5} />
                 </div>
             </Link>
         </motion.div>

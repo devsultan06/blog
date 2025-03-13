@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 
 const RealWorld = () => {
     return (
@@ -16,7 +16,7 @@ const RealWorld = () => {
                         <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
                         <span className="relative z-10 font-medium group-hover:text-black transition duration-300">View All Testimonials</span>
-                        <Image className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
+                        <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
                     </button>
                 </div>
 

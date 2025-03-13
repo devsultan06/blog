@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import CustomImage from "@components/ui/CustomImage";
 import { useState } from "react";
 import NewsArticle from "../../components/news/NewsArticle";
 import HeadLines from "../../components/news/HeadLines";
@@ -37,7 +37,7 @@ export default function News() {
             <div className="box flex justify-between items-start max-900:block border-b border-t border-dark20 px-[100px] max-900:px-[20px] py-[100px] max-900:py-[50px]">
                 <div className="item flex-[1] max-900:w-full max-900:mb-[30px]">
 
-                    <Image src="/images/news1.png" alt="AI Illustration" width={400} height={400} className="max-900:w-full max-900:h-auto max-900:max-h-[300px]" />
+                    <CustomImage src="/images/news1.png" alt="AI Illustration" width={400} height={400} className="max-900:w-full max-900:h-auto max-900:max-h-[300px]" />
 
 
                 </div>
@@ -71,12 +71,12 @@ export default function News() {
                         <div>
                             <div className="icons flex gap-2">
                                 <div className="like flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                                    <Image src="/images/like.png" alt="Like" width={20} height={20} />
+                                    <CustomImage src="/images/like.png" alt="Like" width={20} height={20} />
                                     <p className="text-lightgrey">10k</p>
                                 </div>
 
                                 <div className="share flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                                    <Image src="/images/share.png" alt="Share" width={20} height={20} />
+                                    <CustomImage src="/images/share.png" alt="Share" width={20} height={20} />
                                     <p className="text-lightgrey">200</p>
                                 </div>
                             </div>
