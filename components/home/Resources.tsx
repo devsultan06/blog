@@ -41,7 +41,7 @@ const Resources: React.FC<ResourceItem> = ({
                 <p className="text-lightgrey">{description}</p>
                 <div className="item  max-900:w-[100%]">
                     <button className="relative overflow-hidden flex items-center justify-center gap-1 mt-[20px] w-[100%] max-900:w-[100%] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
-                        <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                        <span className="hover"></span>
 
                         <span className="relative z-10 font-medium group-hover:text-black transition duration-300">{downloadText}</span>
                         <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
@@ -90,7 +90,7 @@ const Resources: React.FC<ResourceItem> = ({
 
                         <div className="">
                             <button className="relative bg-deepblack overflow-hidden flex items-center justify-center gap-1 max-900:w-[100%] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
-                                <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                                <span className="hover"></span>
 
                                 <span className="relative z-10 font-medium group-hover:text-black transition duration-300">Preview</span>
                                 <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/preview.png" alt="Arrow" width={20} height={20} />

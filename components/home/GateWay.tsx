@@ -13,7 +13,7 @@ const GateWay = () => {
                 </div>
                 <div className="item max-900:w-[100%]">
                     <button className="relative overflow-hidden flex items-center justify-center gap-1 mt-[20px] max-900:w-[100%] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
-                        <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                        <span className="hover"></span>
 
                         <span className="relative z-10 font-medium group-hover:text-black transition duration-300">View All Resources</span>
                         <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/arrow.png" alt="Arrow" width={20} height={20} />
