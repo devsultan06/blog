@@ -1,6 +1,16 @@
+
+"use client";
+
+import TableOfContents from "@components/blog/TableOfContents";
 import CustomImage from "@components/ui/CustomImage";
+import { useState } from "react";
 
 export default function Blog() {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleContent = () => {
+        setIsExpanded(!isExpanded);
+    };
     return (
         <div className="text-white">
             <div className="relative  h-[50vh] w-full z-0 bg-no-repeat bg-cover bg-right flex items-end justify-center text-center pt-[80px]"
@@ -13,8 +23,8 @@ export default function Blog() {
                 </h1>
             </div>
 
-            <div className="blog flex max-900:flex-col-reverse ">
-                <div className="item flex-[2] ">
+            <div className="blog flex max-900:flex-col-reverse h-fit border-b border-dark20">
+                <div className="item flex-[2]">
                     <div className="intro border-b border-r border-dark20 px-[100px] py-[50px] max-900:px-[20px]">
                         <h1 className="mb-[20px]">Introduction</h1>
                         <p className="text-lightgrey">
@@ -22,7 +32,7 @@ export default function Blog() {
                         </p>
                     </div>
 
-                    <div className="content border-b border-r border-dark20 px-[100px] py-[50px] max-900:px-[20px] relative">
+                    <div className="content border-r border-dark20 px-[100px] py-[50px] max-900:px-[20px] relative">
                         <h1 className="mb-[20px] text-[20px]">Artificial Intelligence (AI)</h1>
                         <p className="text-lightgrey mb-[20px]">
                             Artificial Intelligence (AI) has permeated virtually every aspect of our lives, and healthcare is no exception. The integration of AI in healthcare is ushering in a new era of medical practice, where machines complement the capabilities of healthcare professionals, ultimately improving patient outcomes and the efficiency of the healthcare system. In this blog post, we will delve into the diverse applications of AI in healthcare, from diagnostic imaging to personalized treatment plans, and address the ethical considerations surrounding this revolutionary technology.
@@ -31,22 +41,35 @@ export default function Blog() {
                             Artificial Intelligence (AI) has permeated virtually every aspect of our lives, and healthcare is no exception. The integration of AI in healthcare is ushering in a new era of medical practice, where machines complement the capabilities of healthcare professionals, ultimately improving patient outcomes and the efficiency of the healthcare system. In this blog post, we will delve into the diverse applications of AI in healthcare, from diagnostic imaging to personalized treatment plans, and address the ethical considerations surrounding this revolutionary technology.
                         </p>
 
-
                         <h1 className="mb-[20px] text-[20px]">Predictive Analytics and Disease Prevention</h1>
 
-                        <div className="relative max-h-[150px] overflow-hidden">
+                        <div className={`relative transition-all duration-500 ease-in-out overflow-hidden ${isExpanded ? "max-h-[1000px]" : "max-h-[150px]"}`}>
                             <p className="text-lightgrey">
-                                One of the most prominent applications of AI in healthcare is in diagnostic imaging. AI algorithms have demonstrated remarkable proficiency in interpreting medical images such as X-rays, MRIs, and CT scans. They can identify anomalies and deviations that might be overlooked by the human eye. This is particularly valuable in early disease detection. For instance, AI can aid radiologists in detecting minute irregularities in mammograms or identifying critical findings in chest X-rays, potentially indicative of life-threatening conditions.
+                                One of the most prominent applications of AI in healthcare is in diagnostic imaging. AI algorithms have demonstrated remarkable proficiency in interpreting medical images such as X-rays, MRIs, and CT scans. They can identify anomalies and deviations that might be overlooked by the human eye. This is particularly valuable in early disease detection. For instance, AI can aid radiologists in detecting minute irregularities in mammograms or identifying critical findings in chest X-rays, potentially indicative of life-threatening conditions.  One of the most prominent applications of AI in healthcare is in diagnostic imaging. AI algorithms have demonstrated remarkable proficiency in interpreting medical images such as X-rays, MRIs, and CT scans. They can identify anomalies and deviations that might be overlooked by the human eye. This is particularly valuable in early disease detection. For instance, AI can aid radiologists in detecting minute irregularities in mammograms or identifying critical findings in chest X-rays, potentially indicative of life-threatening
                             </p>
 
-                            <div className="absolute bottom-0 left-0 right-0 h-[230px] bg-gradient-to-t from-[#141414] to-transparent"></div>
+                            {!isExpanded && (
+                                <div className="absolute bottom-0 left-0 right-0 h-[230px] bg-gradient-to-t from-[#141414] to-transparent"></div>
+                            )}
                         </div>
 
-                        <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center">
-                            <button className="relative overflow-hidden flex items-center justify-center gap-1 border border-dark20 text-lightgrey px-6 py-3 rounded-md transition duration-300 ease-in-out group">
+
+                        <div className={`absolute left-0 right-0 flex items-center justify-center transition-all duration-300 ${isExpanded ? "relative mt-4" : "bottom-6"}`}>
+                            <button
+                                onClick={toggleContent}
+                                className="relative overflow-hidden flex items-center justify-center gap-1 border border-dark20 text-lightgrey px-6 py-3 rounded-md transition duration-300 ease-in-out group"
+                            >
                                 <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
-                                <span className="relative z-10 font-medium group-hover:text-black transition duration-300">Read More</span>
-                                <CustomImage className="relative z-10 group-hover:invert transition duration-300" src="/images/down.png" alt="Arrow" width={20} height={20} />
+                                <span className="relative z-10 font-medium group-hover:text-black transition duration-300">
+                                    {isExpanded ? "Show Less" : "Read More"}
+                                </span>
+                                <CustomImage
+                                    className={`relative z-10 transition duration-300 ${isExpanded ? "rotate-180" : ""}`}
+                                    src="/images/down.png"
+                                    alt="Arrow"
+                                    width={20}
+                                    height={20}
+                                />
                             </button>
                         </div>
                     </div>
@@ -56,21 +79,19 @@ export default function Blog() {
 
                 <div className="item flex-[1] ">
                     <div className="icons flex gap-2 border-b border-dark20 px-[60px] py-[50px] max-900:px-0 max-900:justify-center">
-                        <div className="like flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                            <CustomImage src="/images/liked.png" alt="Like" width={20} height={20} />
-                            <p className="text-lightgrey">10.6k</p>
-                        </div>
-                        <div className="comment flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                            <CustomImage src="/images/read.png" alt="Comment" width={20} height={20} />
-                            <p className="text-lightgrey">50k</p>
-                        </div>
-                        <div className="share flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
-                            <CustomImage src="/images/share.png" alt="Share" width={20} height={20} />
-                            <p className="text-lightgrey">2k</p>
-                        </div>
+                        {[
+                            { src: "/images/liked.png", alt: "Like", count: "10.6k" },
+                            { src: "/images/read.png", alt: "Comment", count: "50k" },
+                            { src: "/images/share.png", alt: "Share", count: "2k" },
+                        ].map((item, index) => (
+                            <div key={index} className="flex gap-1 justify-center cursor-pointer items-center border border-dark20 bg-black px-3 py-1 rounded-[30px]">
+                                <CustomImage src={item.src} alt={item.alt} width={20} height={20} />
+                                <p className="text-lightgrey">{item.count}</p>
+                            </div>
+                        ))}
                     </div>
 
-                    <div className="border-b border-dark20 px-[60px] py-[50px] max-900:px-[20px] ">
+                    <div className="px-[60px] py-[50px] max-900:px-[20px] ">
                         <div className="text-white  ">
                             <div className="flex gap-8 mb-[20px] max-900:gap-[100px]">
                                 <div className="publication">
@@ -96,21 +117,7 @@ export default function Blog() {
 
                         </div>
 
-                        <div className="table mt-[50px] max-900:w-full">
-                            <p className="mb-[20px]">Table of Contents</p>
-                            <ul className="bg-black text-white p-6 text-[15px] rounded-lg space-y-[24.2px] list-disc list-outside">
-                                <li>Introduction</li>
-                                <li>AI in Diagnostic Imaging</li>
-                                <li>Predictive Analytics and Disease Prevention</li>
-                                <li>Personalized Treatment Plans</li>
-                                <li>Drug Discovery and Research</li>
-                                <li>AI in Telemedicine</li>
-                                <li>Ethical Considerations</li>
-                                <li>The Future of AI in Healthcare</li>
-                                <li>Conclusion</li>
-                            </ul>
-
-                        </div>
+                        <TableOfContents />
                     </div>
 
 
