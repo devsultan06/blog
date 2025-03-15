@@ -4,9 +4,13 @@ import Latest from "@components/podcasts/Latest";
 import PodcastsResources from "@components/podcasts/PodcastsResources";
 import PodcastsVideos from "@components/podcasts/PodcastsVideos";
 
+
 export default function Podcasts() {
+
+
     return (
         <div className="news bg-deepblack text-white ">
+            {/* FIXME Coming back to implement the motion animation to the Header */}
 
             <div className=" max-900:block px-[100px] max-900:px-[20px] border-b  border-dark20 py-[100px] max-900:py-[50px]">
                 <h1 className="text-[40px] max-900:text-[33px] font-kumbh text-white">Unlock the World of Artificial Intelligence

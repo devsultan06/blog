@@ -1,12 +1,21 @@
+"use client";
+import { childVariants, containerVariants, useInViewAnimation } from "@/_lib/animation";
 import { podcastsvid } from "@/data/podcastsvid";
 import CustomImage from "@components/ui/CustomImage";
+import { motion } from "framer-motion";
 
 
 const PodcastsVideos = () => {
+    const { ref, isInView } = useInViewAnimation();
+
     return (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 text-white px-[100px] max-900:px-[10px] py-[50px] max-900:py-[50px] ">
+        <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 text-white px-[100px] max-900:px-[10px] py-[50px] max-900:py-[50px] "
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "show" : "hidden"}>
             {podcastsvid.map((video) => (
-                <div key={video.id} className="rounded-lg p-4 shadow-lg ">
+                <motion.div key={video.id} className="rounded-lg p-4 shadow-lg " variants={childVariants}>
                     <div
                         className="relative bg-cover bg-center w-full h-[300px] rounded-md"
                         style={{ backgroundImage: `url(${video.thumbnail})` }}
@@ -21,10 +30,10 @@ const PodcastsVideos = () => {
 
                     <h3 className="text-xl font-bold mt-4">{video.title}</h3>
                     <p className="text-lightgrey mt-2">{video.description}</p>
-                </div>
+                </motion.div>
             ))
             }
-        </div >
+        </motion.div >
     );
 };
 

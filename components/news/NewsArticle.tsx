@@ -1,12 +1,21 @@
+"use client";
+import { childVariants, containerVariants, useInViewAnimation } from "@/_lib/animation";
 import { newsArticles } from "@/data/newsArticle"
 import CustomImage from "@components/ui/CustomImage";
+import { motion } from "framer-motion";
 
 const NewsArticle = () => {
+    const { ref, isInView } = useInViewAnimation();
+
     return (
-        <div className="px-[100px] max-900:px-[10px] py-[50px] max-900:py-[50px] border border-dark20">
+        <motion.div className="px-[100px] max-900:px-[10px] py-[50px] max-900:py-[50px] border border-dark20"
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "show" : "hidden"}>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
                 {newsArticles.map((article) => (
-                    <div key={article.id} className="p-4 rounded-lg">
+                    <motion.div key={article.id} className="p-4 rounded-lg" variants={childVariants}>
                         <CustomImage
                             src={article.image}
                             alt={article.title}
@@ -41,11 +50,11 @@ const NewsArticle = () => {
                         </div>
 
 
-                    </div>
+                    </motion.div>
                 ))}
             </div>
 
-        </div>
+        </motion.div>
     )
 }
 

@@ -15,7 +15,6 @@ import Resources from "@components/home/Resources";
 import RealWorld from "@components/home/RealWorld";
 import Testimonails from "@components/home/Testimonials";
 import Future from "@components/layout/Future";
-import Footer from "@components/layout/Footer";
 import { tab1 } from "@/data/tabs";
 import { blogPosts } from "@/data/blogPosts";
 import { motion } from "framer-motion";
