@@ -4,7 +4,7 @@ import CustomImage from "@components/ui/CustomImage";
 
 const InsightVideos = () => {
     return (
-        <div className="grid grid-cols-2 max-900:grid-cols-1 gap-6 text-white px-[100px] max-900:px-[10px] py-[50px] max-900:py-[50px] ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 text-white px-[100px] max-900:px-[10px] py-[50px] max-900:py-[50px] ">
             {insightvideoPosts.map((video) => (
                 <div key={video.id} className="rounded-lg p-4 shadow-lg border border-dark20">
                     <div

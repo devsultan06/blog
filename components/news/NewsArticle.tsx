@@ -4,7 +4,7 @@ import CustomImage from "@components/ui/CustomImage";
 const NewsArticle = () => {
     return (
         <div className="px-[100px] max-900:px-[10px] py-[50px] max-900:py-[50px] border border-dark20">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
                 {newsArticles.map((article) => (
                     <div key={article.id} className="p-4 rounded-lg">
                         <CustomImage
