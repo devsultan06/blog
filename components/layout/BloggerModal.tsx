@@ -16,7 +16,7 @@ export default function BloggerModal() {
                     animate={{ opacity: 1, y: 0, rotate: 0 }}
                     exit={{ opacity: 0, y: 50 }}
                     transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
-                    className="fixed bottom-5 right-5 max-w-sm bg-black text-white p-6 rounded-lg shadow-2xl border border-gray-700 z-30 overflow-hidden"
+                    className="fixed bottom-5 right-5 max-900:right-1 max-w-sm bg-black text-white p-6 rounded-lg shadow-2xl border border-gray-700 z-30 overflow-hidden"
                 >
                     <Confetti numberOfPieces={300} recycle={false} width={1000}
                         height={1000} />
