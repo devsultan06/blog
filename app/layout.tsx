@@ -3,6 +3,7 @@ import "./globals.css";
 import SubscribeBanner from "@components/layout/SubscribeBanner";
 import NavBar from "@components/layout/NavBar";
 import Footer from "@components/layout/Footer";
+import BloggerModal from "@components/layout/BloggerModal";
 
 export const metadata: Metadata = {
     title: "AI Blog",
@@ -25,6 +26,7 @@ export default function RootLayout({
             >
                 <SubscribeBanner />
                 <NavBar />
+                <BloggerModal />
                 <div className="pt-[100px] bg-deepblack">
                     {children}
 
