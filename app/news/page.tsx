@@ -26,7 +26,7 @@ export default function News() {
 
                     </div>
                     <div>
-                        <p className="text-lightgrey text-[17px]">Explore the latest news from around the world. We bring you up-to-the-minute updates on the most significant events, trends, and stories. Discover the world through our news coverage.</p>
+                        <p className="text-grey60 text-[17px]">Explore the latest news from around the world. We bring you up-to-the-minute updates on the most significant events, trends, and stories. Discover the world through our news coverage.</p>
 
                     </div>
                 </div>

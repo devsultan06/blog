@@ -82,7 +82,7 @@ export default function Home() {
               <motion.h1 className="text-[40px] max-900:text-[32px]" variants={childVariants}>
                 Artificial Intelligence
               </motion.h1>
-              <motion.p className="text-lightgrey text-[17px] mt-[5px]" variants={childVariants}>
+              <motion.p className="text-grey50 text-[17px] mt-[5px]" variants={childVariants}>
                 Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.
               </motion.p>
             </motion.div>
@@ -113,7 +113,7 @@ export default function Home() {
             <div className="pl-[40px] mt-[-30px] max-900:px-[20px] ">
               <CustomImage src="/images/people.png" alt="Arrow" width={150} height={150} />
               <h1 className="text-[20px] my-[10px]">Explore 1000+ resources</h1>
-              <p className="text-lightgrey text-[14px]">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
+              <p className="text-grey60 text-[14px]">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
 
               <button className="relative overflow-hidden flex justify-center  max-900:w-[100%] items-center gap-1 mt-[20px] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
                 <span className="hover"></span>
