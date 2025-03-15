@@ -41,7 +41,7 @@ const PodcastsResources: React.FC<PodcastResource> = ({
                 <div className="flex items-center justify-between max-900:w-full bg-black p-[20px] rounded-[10px] border border-dark20 mt-[20px] w-full gap-[20px]">
                     <div>
                         <p className="text-lightgrey text-[15px] ">Host</p>
-                        <h1 className="font-bold whitespace-nowrap">{host}</h1>
+                        <h1 className="font-bold whitespace-nowrap text-[15px]">{host}</h1>
                     </div>
 
                     <div className="max-900:w-full flex justify-end ">

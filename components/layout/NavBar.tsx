@@ -4,7 +4,7 @@ import CustomImage from "@components/ui/CustomImage";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/navLinks";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function NavBar() {
     const pathname = usePathname();
@@ -13,6 +13,15 @@ export default function NavBar() {
     const handleLinkClick = () => {
         setIsOpen(false);
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (isOpen) setIsOpen(false);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isOpen]);
 
     return (
         <div className={`flex fixed top-[40px] left-0 z-50 right-0 items-center justify-between bg-black text-white py-4 px-[100px] border-t border-b border-dark20 max-900:px-[20px] transition-all duration-300`}>
