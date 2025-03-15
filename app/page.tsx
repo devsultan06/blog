@@ -18,6 +18,9 @@ import Future from "@components/layout/Future";
 import Footer from "@components/layout/Footer";
 import { tab1 } from "@/data/tabs";
 import { blogPosts } from "@/data/blogPosts";
+import { motion } from "framer-motion";
+import Counter from "@components/home/Counter";
+
 
 export default function Home() {
 
@@ -38,31 +41,67 @@ export default function Home() {
   useEffect(() => {
     console.log("Updated posts state:", posts);
   }, [posts]);
+
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: -20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+
+
   return (
     <div className="home text-white">
 
       <header className="bg-deepblack text-white border-b border-dark20">
         <div className="box flex justify-between items-start max-900:block">
           <div className="item flex-1 border-r border-b border-t border-dark20  pt-[100px] max-900:pt-[50px]">
-            <div className="pl-[100px] max-900:pl-[20px] max-900:pr-[20px]">
-              <p className="text-lightgrey text-[18px] font-kumbh">Your Journey to Tomorrow Begins Here</p>
-              <h1 className="text-[40px] max-900:text-[32px] font-kumbh">Explore the Frontiers of</h1>
-              <h1 className="text-[40px] max-900:text-[32px]">Artificial Intelligence</h1>
-              <p className="text-lightgrey text-[17px] mt-[5px]">Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.</p>
-            </div>
+
+            <motion.div
+              className="pl-[100px] max-900:pl-[20px] max-900:pr-[20px]"
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+            >
+              <motion.p className="text-lightgrey text-[18px] font-kumbh" variants={childVariants}>
+                Your Journey to Tomorrow Begins Here
+              </motion.p>
+              <motion.h1 className="text-[40px] max-900:text-[32px] font-kumbh" variants={childVariants}>
+                Explore the Frontiers of
+              </motion.h1>
+              <motion.h1 className="text-[40px] max-900:text-[32px]" variants={childVariants}>
+                Artificial Intelligence
+              </motion.h1>
+              <motion.p className="text-lightgrey text-[17px] mt-[5px]" variants={childVariants}>
+                Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.
+              </motion.p>
+            </motion.div>
+
 
             <div className="box flex  justify-between items-center mt-[80px] border-r border-t border-b border-dark20 max-900:w-[100%]">
               <div className="item border-r border-dark20 w-1/3 p-[50px] pl-[100px] max-900:pl-[20px] text-[25px] font-semibold">
-                300<span className="text-yellow">+</span>
+                <Counter from={1} to={300} /><span className="text-yellow">+</span>
                 <p className="text-lightgrey text-[15px]  font-normal mt-[7px]">Resources Available</p>
               </div>
               <div className="item border-r border-dark20 w-1/3 p-[50px] text-[25px] font-semibold  max-900:pl-[30px] ">
-                12k<span className="text-yellow">+</span>
+                <Counter from={1} to={520} />
+                <span className="text-yellow">+</span>
                 <p className="text-lightgrey text-[15px] font-normal mt-[7px]">Total Downloads</p>
               </div>
 
               <div className="item w-1/3 p-[50px] text-[25px] font-semibold ">
-                10k<span className="text-yellow">+</span>
+                <Counter from={1} to={900} />
+                <span className="text-yellow">+</span>
                 <p className="text-lightgrey text-[15px] font-normal mt-[7px]">Active Users</p>
               </div>
             </div>
