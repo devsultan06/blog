@@ -1,11 +1,20 @@
 import { testimonial } from "@/data/testimonial";
 import CustomImage from "@components/ui/CustomImage";
+import { useInViewAnimation, containerVariants, childVariants } from "@/_lib/animation";
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
+    const { ref, isInView } = useInViewAnimation();
+
+
     return (
-        <div className="grid bg-deepblack grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-[100px] max-900:px-[20px]">
+        <motion.div className="grid bg-deepblack grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-[100px] max-900:px-[20px]"
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "show" : "hidden"}>
             {testimonial.map((testimonial) => (
-                <div key={testimonial.id} className="px-6 py-10 border border-dark20 bg-dark  text-center">
+                <motion.div key={testimonial.id} className="px-6 py-10 border border-dark20 bg-dark  text-center" variants={childVariants}>
                     <div className="flex gap-2 justify-center items-center ">
                         <CustomImage
                             src={testimonial.image}
@@ -31,9 +40,9 @@ const Testimonials = () => {
 
 
 
-                </div>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
     );
 };
 

@@ -44,8 +44,8 @@ const PodcastsResources: React.FC<PodcastResource> = ({
                         <h1 className="font-bold whitespace-nowrap">{host}</h1>
                     </div>
 
-                    <div className="max-900:w-full flex justify-end">
-                        <button className="relative overflow-hidden flex items-center justify-center gap-1 border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
+                    <div className="max-900:w-full flex justify-end ">
+                        <button className="relative overflow-hidden flex items-center justify-center gap-1 border border-dark20 text-lightgrey px-2 py-3 rounded-md transition duration-300 ease-in-out group">
                             <span className="hover"></span>
 
                             <span className="relative z-10 font-medium group-hover:text-black transition duration-300">
