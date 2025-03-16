@@ -1,3 +1,5 @@
+"use client";
+import Counter from "@components/home/Counter"
 import Future from "@components/layout/Future"
 
 const Resources = () => {
@@ -20,7 +22,30 @@ const Resources = () => {
 
             </div>
 
-            <Future/>
+            <div className="box flex flex-wrap border border-dark20 max-900:border-none  max-900:w-[100%]">
+                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] pl-[100px] max-900:w-1/2 max-900:pl-[20px] text-[25px] font-semibold">
+                    <Counter from={1} to={300} /><span className="text-yellow">+</span>
+                    <p className="text-lightgrey text-[15px] font-normal mt-[7px]">Resources Available</p>
+                </div>
+
+                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] text-[25px] font-semibold max-900:w-1/2 max-900:pl-[30px] max-900:border-r">
+                    <Counter from={1} to={520} /><span className="text-yellow">+</span>
+                    <p className="text-lightgrey text-[15px] font-normal mt-[7px]">Total Downloads</p>
+                </div>
+
+                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] text-[25px] font-semibold max-900:w-1/2">
+                    <Counter from={1} to={900} /><span className="text-yellow">+</span>
+                    <p className="text-lightgrey text-[15px] font-normal mt-[7px]">Active Users</p>
+                </div>
+
+                <div className="item w-1/4 max-900:border-b border-dark20 p-[50px] text-[25px] font-semibold max-900:w-1/2">
+                    <Counter from={1} to={100} /><span className="text-yellow">+</span>
+                    <p className="text-lightgrey text-[15px] font-normal mt-[7px]">Countries Accessing Our Content</p>
+                </div>
+            </div>
+
+
+            <Future />
         </div>
     )
 }

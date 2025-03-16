@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Confetti from "react-confetti";
@@ -9,10 +9,12 @@ import { FiEdit2 } from "react-icons/fi";
 
 export default function BloggerModal() {
     const pathname = usePathname();
-    const isHome = pathname === "/"; 
+    const isHome = pathname === "/";
 
-    const [isOpen, setIsOpen] = useState(isHome); 
-    const [showConfetti, setShowConfetti] = useState(isHome); 
+    const [isOpen, setIsOpen] = useState(isHome);
+    const [showConfetti, setShowConfetti] = useState(isHome);
+    const [showTooltip, setShowTooltip] = useState(false);
+
 
     useEffect(() => {
         if (isHome) {
@@ -80,18 +82,43 @@ export default function BloggerModal() {
             </AnimatePresence>
 
             {!isOpen && (
-                <motion.button
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    whileTap={{ scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => setIsOpen(true)}
-                    className="fixed bottom-5 right-5 bg-yellow text-black p-3 rounded-full shadow-lg transition-all z-20"
-                >
-                    <FiEdit2 size={22} />
-                </motion.button>
+                <div className="fixed bottom-5 right-5 flex items-center justify-center">
+                    <div
+                        className="relative flex items-center justify-center"
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                    >
+                        <AnimatePresence>
+                            {showTooltip && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 5 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="absolute bottom-12 bg-black text-white text-xs px-2 py-1 w-fit whitespace-nowrap rounded-md shadow-md"
+                                >
+                                    Start Writing
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        <motion.button
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            whileHover={{ scale: 1.2, rotate: 10 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ duration: 0.3 }}
+                            onClick={() => {
+                                setIsOpen(true);
+                                setShowTooltip(false);
+                            }}
+                            className="bg-yellow text-black p-3 rounded-full shadow-lg transition-all z-20"
+                        >
+                            <FiEdit2 size={22} />
+                        </motion.button>
+                    </div>
+                </div>
             )}
         </div>
     );
