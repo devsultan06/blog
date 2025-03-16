@@ -20,7 +20,7 @@ interface ResourceItem {
 }
 
 
-const Resources: React.FC<ResourceItem> = ({
+export const Resources: React.FC<ResourceItem> = ({
     title,
     icon,
     description,
@@ -108,4 +108,3 @@ const Resources: React.FC<ResourceItem> = ({
     );
 };
 
-export default Resources;

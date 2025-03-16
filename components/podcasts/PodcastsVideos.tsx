@@ -5,7 +5,7 @@ import CustomImage from "@components/ui/CustomImage";
 import { motion } from "framer-motion";
 
 
-const PodcastsVideos = () => {
+export const PodcastsVideos = () => {
     const { ref, isInView } = useInViewAnimation();
 
     return (
@@ -37,4 +37,3 @@ const PodcastsVideos = () => {
     );
 };
 
-export default PodcastsVideos;

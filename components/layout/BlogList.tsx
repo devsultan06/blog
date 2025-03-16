@@ -20,7 +20,7 @@ interface BlogListProps {
     blogPosts: BlogPost[];
     buttonText: string
 }
-const BlogList: React.FC<BlogListProps> = ({ activeTab, blogPosts, buttonText }) => {
+export const BlogList: React.FC<BlogListProps> = ({ activeTab, blogPosts, buttonText }) => {
     const filteredBlogs = activeTab === "All" ? blogPosts : blogPosts.filter(post => post.niche === activeTab);
 
     return (
@@ -75,4 +75,3 @@ const BlogList: React.FC<BlogListProps> = ({ activeTab, blogPosts, buttonText })
     );
 };
 
-export default BlogList;

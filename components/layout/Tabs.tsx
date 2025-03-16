@@ -5,7 +5,7 @@ interface TabsProps {
     tabs: string[]; 
 }
 
-const Tabs: React.FC<TabsProps> = ({ activeTab, setActiveTab, tabs }) => {
+export const Tabs: React.FC<TabsProps> = ({ activeTab, setActiveTab, tabs }) => {
     return (
         <div className="tabs border-b border-dark20 px-[100px] py-[30px] max-900:px-[20px] overflow-x-auto whitespace-nowrap scrollbar-hide">
             <div className="flex gap-[20px] justify-between items-center min-w-max">
@@ -28,4 +28,3 @@ const Tabs: React.FC<TabsProps> = ({ activeTab, setActiveTab, tabs }) => {
     );
 };
 
-export default Tabs;

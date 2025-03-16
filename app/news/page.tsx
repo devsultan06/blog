@@ -2,16 +2,18 @@
 
 import CustomImage from "@components/ui/CustomImage";
 import { useState } from "react";
-import NewsArticle from "../../components/news/NewsArticle";
-import HeadLines from "../../components/news/HeadLines";
-import Tabs from "@components/layout/Tabs";
-import BlogList from "@components/layout/BlogList";
+
 import { tab2 } from "@/data/tabs";
 import { blogPosts2 } from "@/data/blogPosts";
-import Insights from "@components/news/Insights";
-import InsightVideos from "@components/news/InsightVideos";
-import Future from "@components/layout/Future";
+
 import { motion } from "framer-motion";
+import { NewsArticle } from "@components/news/NewsArticle";
+import { HeadLines } from "@components/news/HeadLines";
+import { Tabs } from "@components/layout/Tabs";
+import { BlogList } from "@components/layout/BlogList";
+import { Insights } from "@components/news/Insights";
+import { InsightVideos } from "@components/news/InsightVideos";
+import { Future } from "@components/layout/Future";
 
 export default function News() {
     const [activeTab, setActiveTab] = useState("All");

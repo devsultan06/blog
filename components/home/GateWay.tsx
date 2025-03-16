@@ -2,7 +2,7 @@ import CustomImage from "@components/ui/CustomImage";
 import { motion, useInView } from "framer-motion";
 import { useInViewAnimation, containerVariants, childVariants } from "@/_lib/animation";
 
-const GateWay = () => {
+export const GateWay = () => {
     const { ref, isInView } = useInViewAnimation(); 
     return (
         <section className="bg-black pt-[60px] pb-[60px] px-[100px] max-900:px-[20px] ">
@@ -44,4 +44,3 @@ const GateWay = () => {
     );
 };
 
-export default GateWay;

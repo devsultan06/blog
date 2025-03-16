@@ -1,7 +1,7 @@
 
 "use client";
 
-import TableOfContents from "@components/blog/TableOfContents";
+import { TableOfContents } from "@components/blog/TableOfContents";
 import CustomImage from "@components/ui/CustomImage";
 import { useState } from "react";
 

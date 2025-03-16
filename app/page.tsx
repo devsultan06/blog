@@ -2,23 +2,25 @@
 
 import { features2 } from "@/data/features2";
 import { resourcesData } from "@/data/resourcesData";
-import BlogList from "@components/layout/BlogList";
-import Explore from "@components/home/Explore";
-import FeaturesSection from "@components/home/FeatureSection";
-import FeatureSection2 from "@components/home/FeatureSection2";
-import GateWay from "@components/home/GateWay";
-import HeroSection from "@components/home/HeroSection";
-import Tabs from "@components/layout/Tabs";
+
 import CustomImage from "@components/ui/CustomImage";
 import { useEffect, useState } from "react";
-import Resources from "@components/home/Resources";
-import RealWorld from "@components/home/RealWorld";
-import Testimonails from "@components/home/Testimonials";
-import Future from "@components/layout/Future";
+
 import { tab1 } from "@/data/tabs";
 import { blogPosts } from "@/data/blogPosts";
 import { motion } from "framer-motion";
-import Counter from "@components/home/Counter";
+import { Counter } from "@components/home/Counter";
+import { FeaturesSection } from "@components/home/FeatureSection";
+import { HeroSection } from "@components/home/HeroSection";
+import { FeatureSection2 } from "@components/home/FeatureSection2";
+import { Explore } from "@components/home/Explore";
+import { Tabs } from "@components/layout/Tabs";
+import { BlogList } from "@components/layout/BlogList";
+import { GateWay } from "@components/home/GateWay";
+import Resources from "./resources/page";
+import { RealWorld } from "@components/home/RealWorld";
+import { Future } from "@components/layout/Future";
+import { Testimonials } from "@components/home/Testimonials";
 
 
 export default function Home() {
@@ -162,7 +164,7 @@ export default function Home() {
       </section>
 
       <RealWorld />
-      <Testimonails />
+      <Testimonials />
 
       <Future />
 

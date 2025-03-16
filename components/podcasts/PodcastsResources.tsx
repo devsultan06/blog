@@ -15,7 +15,7 @@ interface PodcastResource {
 }
 
 
-const PodcastsResources: React.FC<PodcastResource> = ({
+export const PodcastsResources = ({
     title,
     icon,
     host,
@@ -25,7 +25,9 @@ const PodcastsResources: React.FC<PodcastResource> = ({
     avgEpisodeLength,
     releaseFrequency,
     image,
-}) => {
+}: PodcastResource) => {
+
+
     return (
         <div className="box flex justify-between items-start max-900:block font-inter ">
             <div className="item border border-dark20 pr-8 w-1/3 pl-[100px] h-[650px] max-900:h-[400px] flex flex-col justify-center max-900:w-full max-900:pl-[20px]">
@@ -117,4 +119,4 @@ const PodcastsResources: React.FC<PodcastResource> = ({
     );
 };
 
-export default PodcastsResources;
+

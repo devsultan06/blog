@@ -14,7 +14,7 @@ interface PodcastResource {
 }
 
 
-const Reports: React.FC<PodcastResource> = ({
+export const Reports: React.FC<PodcastResource> = ({
     title,
     icon,
     title2,
@@ -97,4 +97,3 @@ const Reports: React.FC<PodcastResource> = ({
     );
 };
 
-export default Reports;

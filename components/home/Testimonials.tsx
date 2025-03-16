@@ -3,7 +3,7 @@ import CustomImage from "@components/ui/CustomImage";
 import { useInViewAnimation, containerVariants, childVariants } from "@/_lib/animation";
 import { motion } from "framer-motion";
 
-const Testimonials = () => {
+export const Testimonials = () => {
     const { ref, isInView } = useInViewAnimation();
 
 
@@ -46,4 +46,3 @@ const Testimonials = () => {
     );
 };
 
-export default Testimonials;

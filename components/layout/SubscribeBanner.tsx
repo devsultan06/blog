@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const SubscribeBanner = () => {
+export const SubscribeBanner = () => {
     const [showBanner, setShowBanner] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -45,4 +45,3 @@ const SubscribeBanner = () => {
     );
 };
 
-export default SubscribeBanner;

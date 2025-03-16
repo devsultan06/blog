@@ -13,10 +13,10 @@ const Footer = () => {
                     <div key={section.title} className="w-1/5">
                         <h3 className="font-semibold mb-3">{section.title}</h3>
                         <ul className="space-y-2">
-                            {section.links.map((link: FooterLink) => (
-                                <li key={link.name} className={`whitespace-nowrap ${link.icon ? "border border-dark20 rounded-md px-4 py-3 w-fit" : ""}`}>
+                            {section.links.map((link: FooterLink, index) => (
+                                <li key={index} className={`whitespace-nowrap ${link.icon ? "border border-dark20 rounded-md px-4 py-3 w-fit" : ""}`}>
                                     <a href={link.url} className={`text-lightgrey hover:text-white transition flex items-center gap-2 
-        ${link.icon ? "justify-center" : ""}`}>
+                                     ${link.icon ? "justify-center" : ""}`}>
                                         {link.name}
                                         {link.badge && (
                                             <span className="bg-deepblack text-white text-xs rounded-md border border-dark20 px-[10px] py-[5px]">

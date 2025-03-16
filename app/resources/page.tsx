@@ -1,10 +1,11 @@
 "use client";
 import { reportdata } from "@/data/reportdata";
-import Counter from "@components/home/Counter"
-import Future from "@components/layout/Future"
-import Analysis from "@components/resources/Analysis";
-import ReportHeader from "@components/resources/ReportHeader";
-import Reports from "@components/resources/Reports";
+import { Counter } from "@components/home/Counter";
+import { Future } from "@components/layout/Future";
+import { Analysis } from "@components/resources/Analysis";
+import { ReportHeader } from "@components/resources/ReportHeader";
+import { Reports } from "@components/resources/Reports";
+
 import { motion } from "framer-motion";
 
 

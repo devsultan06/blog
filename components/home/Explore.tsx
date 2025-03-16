@@ -2,7 +2,7 @@ import CustomImage from "@components/ui/CustomImage";
 import { motion, useInView } from "framer-motion";
 import { useInViewAnimation, containerVariants, childVariants } from "@/_lib/animation";
 
-const Explore = () => {
+export const Explore = () => {
     const { ref, isInView } = useInViewAnimation(); 
     return (
         <section className="pt-[60px] pb-[60px] px-[100px] bg-black max-900:px-[20px] ">
@@ -43,4 +43,3 @@ const Explore = () => {
     );
 };
 
-export default Explore;

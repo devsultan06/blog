@@ -5,7 +5,7 @@ import CustomImage from "@components/ui/CustomImage";
 import { motion } from "framer-motion";
 
 
-const Analysis = () => {
+export const Analysis = () => {
     const { ref, isInView } = useInViewAnimation();
 
     return (
@@ -48,4 +48,3 @@ const Analysis = () => {
     );
 };
 
-export default Analysis;

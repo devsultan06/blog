@@ -10,7 +10,7 @@ interface FeatureItemProps {
   stat: string;
 }
 
-const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description, link, linkText, stat }) => {
+export const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description, link, linkText, stat }) => {
   return (
     <div className="item border pl-[100px] border-dark20 w-1/3 py-[30px] pr-[30px] max-900:w-full max-900:pl-[20px]">
       <CustomImage src={icon} alt={title} width={30} height={30} className="mb-[20px]" />
@@ -30,4 +30,3 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description, lin
   );
 };
 
-export default FeatureItem;

@@ -12,7 +12,7 @@ interface FeatureSectionProps {
     features: FeatureItem[];
 }
 
-const FeatureSection2: React.FC<FeatureSectionProps> = ({ icon, heading, subtext, features }) => {
+export const FeatureSection2: React.FC<FeatureSectionProps> = ({ icon, heading, subtext, features }) => {
     return (
         <div className="box flex justify-between items-start max-900:block ">
             <div className="item border border-dark20 pr-8 w-1/3 pl-[100px] h-[400px] flex flex-col justify-center max-900:w-full max-900:pl-[20px]">
@@ -35,4 +35,3 @@ const FeatureSection2: React.FC<FeatureSectionProps> = ({ icon, heading, subtext
     );
 };
 
-export default FeatureSection2;

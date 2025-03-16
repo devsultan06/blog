@@ -1,6 +1,6 @@
 import CustomImage from "@components/ui/CustomImage";
 
-const Insights = () => {
+export const Insights = () => {
     return (
         <section className="bg-black pt-[60px] pb-[60px] px-[100px] max-900:px-[20px] ">
             <div className="flex justify-between items-center max-900:block">
@@ -27,4 +27,3 @@ const Insights = () => {
     );
 };
 
-export default Insights;

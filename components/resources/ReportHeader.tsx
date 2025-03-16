@@ -2,7 +2,7 @@ import { childVariants, containerVariants } from "@/_lib/animation";
 import { motion } from "framer-motion";
 import { useInViewAnimation } from "@/_lib/animation";
 
-const ReportHeader = () => {
+export const ReportHeader = () => {
     const { ref, isInView } = useInViewAnimation();
 
     return (
@@ -32,4 +32,3 @@ const ReportHeader = () => {
     );
 };
 
-export default ReportHeader;

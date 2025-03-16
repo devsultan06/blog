@@ -1,5 +1,5 @@
 // components/blog/TableOfContents.tsx
-export default function TableOfContents() {
+export function TableOfContents() {
     return (
       <div className="mt-[50px] max-900:w-full">
         <p className="mb-[20px]">Table of Contents</p>

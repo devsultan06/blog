@@ -1,9 +1,9 @@
 import { features } from "@/data/features";
-import FeatureItem from "./FeatureItem";
+import { FeatureItem } from "./FeatureItem";
 
 
 
-const FeaturesSection = () => {
+export const FeaturesSection = () => {
     return (
         <section className="bg-deepblack">
             <div className="box flex justify-between items-center max-900:block">
@@ -15,4 +15,3 @@ const FeaturesSection = () => {
     );
 };
 
-export default FeaturesSection;

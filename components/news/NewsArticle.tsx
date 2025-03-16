@@ -4,7 +4,7 @@ import { newsArticles } from "@/data/newsArticle"
 import CustomImage from "@components/ui/CustomImage";
 import { motion } from "framer-motion";
 
-const NewsArticle = () => {
+export const NewsArticle = () => {
     const { ref, isInView } = useInViewAnimation();
 
     return (
@@ -58,4 +58,3 @@ const NewsArticle = () => {
     )
 }
 
-export default NewsArticle

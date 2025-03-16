@@ -2,7 +2,7 @@ import CustomImage from "@components/ui/CustomImage";
 import { childVariants, containerVariants, useInViewAnimation } from "@/_lib/animation";
 import { motion } from "framer-motion";
 
-const RealWorld = () => {
+export const RealWorld = () => {
     const { ref, isInView } = useInViewAnimation();
 
 
@@ -35,4 +35,3 @@ const RealWorld = () => {
     );
 };
 
-export default RealWorld;

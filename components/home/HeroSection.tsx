@@ -2,7 +2,7 @@ import { childVariants, containerVariants } from "@/_lib/animation";
 import { motion } from "framer-motion";
 import { useInViewAnimation } from "@/_lib/animation";
 
-const HeroSection = () => {
+export const HeroSection = () => {
   const { ref, isInView } = useInViewAnimation();
 
   return (
@@ -32,4 +32,3 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;

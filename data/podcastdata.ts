@@ -1,4 +1,4 @@
-export const podcasts = [
+export const podcastdata = [
     {
       id: 1,
       icon: "/images/podcastres1.png",

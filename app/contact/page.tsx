@@ -1,30 +1,15 @@
 "use client";
 import { reportdata } from "@/data/reportdata";
-import Counter from "@components/home/Counter"
-import Future from "@components/layout/Future"
-import Analysis from "@components/resources/Analysis";
-import ReportHeader from "@components/resources/ReportHeader";
-import Reports from "@components/resources/Reports";
+import { Future } from "@components/layout/Future";
+import { Analysis } from "@components/resources/Analysis";
+import { ReportHeader } from "@components/resources/ReportHeader";
+import { Reports } from "@components/resources/Reports";
 import CustomImage from "@components/ui/CustomImage";
-import { motion } from "framer-motion";
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 
 
 const Contact = () => {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.3,
-            },
-        },
-    };
 
-    const childVariants = {
-        hidden: { opacity: 0, y: -20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-    };
     return (
         <div className="news bg-deepblack text-white ">
 

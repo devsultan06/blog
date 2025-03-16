@@ -1,6 +1,6 @@
 import CustomImage from "@components/ui/CustomImage";
 
-const HeadLines = () => {
+export const HeadLines = () => {
     return (
         <section className="bg-black pt-[60px] pb-[60px] px-[100px] max-900:px-[20px] ">
             <div className="flex justify-between items-center max-900:block">
@@ -27,4 +27,3 @@ const HeadLines = () => {
     );
 };
 
-export default HeadLines;

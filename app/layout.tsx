@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SubscribeBanner from "@components/layout/SubscribeBanner";
 import NavBar from "@components/layout/NavBar";
 import Footer from "@components/layout/Footer";
 import BloggerModal from "@components/layout/BloggerModal";
+import { SubscribeBanner } from "@components/layout/SubscribeBanner";
 
 export const metadata: Metadata = {
     title: "AI Blog",

@@ -3,7 +3,7 @@ import { childVariants, containerVariants } from "@/_lib/animation";
 import { motion } from "framer-motion";
 import { useInViewAnimation } from "@/_lib/animation";
 
-const Latest = () => {
+export const Latest = () => {
     const { ref, isInView } = useInViewAnimation();
 
     return (
@@ -33,4 +33,3 @@ const Latest = () => {
     );
 };
 
-export default Latest;
