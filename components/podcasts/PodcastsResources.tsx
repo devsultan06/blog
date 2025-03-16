@@ -19,7 +19,6 @@ const PodcastsResources: React.FC<PodcastResource> = ({
     title,
     icon,
     host,
-    rating,
     description,
     details,
     totalEpisodes,
@@ -70,10 +69,8 @@ const PodcastsResources: React.FC<PodcastResource> = ({
                     className="relative bg-cover bg-center w-full h-[300px] rounded-md"
                     style={{ backgroundImage: `url(${image})` }}
                 >
-                    {/* Gradient Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/80 to-transparent rounded-b-md"></div>
 
-                    {/* Centered Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center">
                         <CustomImage
                             src="/images/play.png"
