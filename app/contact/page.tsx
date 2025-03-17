@@ -1,4 +1,3 @@
-"use client";
 import { reportdata } from "@/data/reportdata";
 import { FaqBox } from "@components/contact/FaqBox";
 import { Reach } from "@components/contact/Reach";
@@ -6,6 +5,11 @@ import { Future } from "@components/layout/Future";
 
 import CustomImage from "@components/ui/CustomImage";
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+
+export const metadata = {
+    title: "Contact Us",
+    description: "Get in touch with us for inquiries and support.",
+};
 
 
 const Contact = () => {

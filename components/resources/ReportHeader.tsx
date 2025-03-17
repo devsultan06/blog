@@ -1,3 +1,4 @@
+"use client"
 import { childVariants, containerVariants } from "@/_lib/animation";
 import { motion } from "framer-motion";
 import { useInViewAnimation } from "@/_lib/animation";

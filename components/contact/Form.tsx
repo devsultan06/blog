@@ -1,3 +1,4 @@
+"use client"
 import { useFormik } from "formik";
 import ClipLoader from "react-spinners/ClipLoader";
 import { getSupportSchema } from "@/schemas/supportSchema";

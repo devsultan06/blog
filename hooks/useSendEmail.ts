@@ -1,3 +1,4 @@
+"use client"
 import emailjs from '@emailjs/browser';
 import { useState } from "react";
 

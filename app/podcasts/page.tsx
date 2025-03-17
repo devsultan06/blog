@@ -5,6 +5,11 @@ import { PodcastsResources } from "@components/podcasts/PodcastsResources";
 import { PodcastsVideos } from "@components/podcasts/PodcastsVideos";
 
 
+export const metadata = {
+    title: "Podcasts",
+    description: "Listen to our latest podcast episodes on various topics.",
+};
+
 
 export default function Podcasts() {
 
