@@ -159,7 +159,7 @@ const Form = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="text-[15px cursor-pointer max-900:w-full rounded-[5px] border-none bg-yellow p-[10px] text-black outline-none"
+              className="text-[15px cursor-pointer max-900:w-full rounded-[5px]  border-none bg-yellow p-[10px] text-black outline-none"
             >
               {isLoading ? (
                 <ClipLoader

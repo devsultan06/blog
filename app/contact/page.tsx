@@ -1,11 +1,9 @@
 "use client";
 import { reportdata } from "@/data/reportdata";
-import { Faq } from "@components/contact/Faq";
+import { FaqBox } from "@components/contact/FaqBox";
 import { Reach } from "@components/contact/Reach";
 import { Future } from "@components/layout/Future";
-import { Analysis } from "@components/resources/Analysis";
-import { ReportHeader } from "@components/resources/ReportHeader";
-import { Reports } from "@components/resources/Reports";
+
 import CustomImage from "@components/ui/CustomImage";
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 
@@ -73,7 +71,7 @@ const Contact = () => {
 
 
             <Reach />
-            <Faq />
+            <FaqBox />
 
             <Future />
 
