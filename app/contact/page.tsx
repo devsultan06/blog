@@ -1,5 +1,7 @@
 "use client";
 import { reportdata } from "@/data/reportdata";
+import { Faq } from "@components/contact/Faq";
+import { Reach } from "@components/contact/Reach";
 import { Future } from "@components/layout/Future";
 import { Analysis } from "@components/resources/Analysis";
 import { ReportHeader } from "@components/resources/ReportHeader";
@@ -14,8 +16,8 @@ const Contact = () => {
         <div className="news bg-deepblack text-white ">
 
 
-            <div className="box flex flex-wrap border border-dark20 max-900:border-none  max-900:block">
-                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] pl-[100px] max-900:w-full max-900:pl-[50px] text-[25px] font-semibold">
+            <div className="box block flex-wrap border border-dark20 max-900:border-none  sm:flex">
+                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] pl-[100px] max-900:w-full max-900:pl-[20px] text-[25px] font-semibold">
                     <h1 className="text-[20px]">General Enquiries</h1>
                     <button className="relative bg-black flex items-center justify-center gap-1 mt-[20px] whitespace-nowrap w-fit border border-dark20 text-lightgrey px-5 py-2 rounded-md transition duration-300 ease-in-out group">
                         <span className="hover rounded-md"></span>
@@ -31,7 +33,7 @@ const Contact = () => {
                     </button>
                 </div>
 
-                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] text-[25px] font-semibold max-900:w-full  max-900:border-r">
+                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] text-[25px] max-900:pl-[20px] font-semibold max-900:w-full  max-900:border-r">
                     <h1 className="text-[20px]">Technical Support</h1>
                     <button className="relative bg-black flex items-center justify-center gap-1 mt-[20px] whitespace-nowrap w-fit border border-dark20 text-lightgrey px-5 py-2 rounded-md transition duration-300 ease-in-out group">
                         <span className="hover rounded-md"></span>
@@ -47,7 +49,7 @@ const Contact = () => {
                     </button>
                 </div>
 
-                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] text-[25px] font-semibold max-900:w-full">
+                <div className="item border-r max-900:border-b border-dark20 w-1/4 p-[50px] text-[25px] max-900:pl-[20px] font-semibold max-900:w-full">
                     <h1 className="text-[20px]">Our Office</h1>
                     <p className="text-grey60 text-[15px] font-normal mt-[7px]">Address: 123 AI Tech Avenue, Techville, 54321</p>
 
@@ -59,7 +61,7 @@ const Contact = () => {
                     </button>
                 </div>
 
-                <div className="item w-1/4 max-900:border-b border-dark20 p-[50px] text-[25px] font-semibold max-900:w-full">
+                <div className="item w-1/4 max-900:border-b border-dark20 p-[50px] text-[25px] max-900:pl-[20px] font-semibold max-900:w-full">
                     <h1 className="text-[20px]">Connect with Us</h1>
                     <div className="flex gap-2 text-lg max-900:my-[20px] mt-[10px]">
                         <a href="https://x.com/devsultan06" className="hover:text-lightgrey text-white bg-black px-4  py-3 border border-dark20 rounded-md"><FaTwitter /></a>
@@ -70,9 +72,8 @@ const Contact = () => {
             </div>
 
 
-            {reportdata.map((reports, index) => (
-                <Reports key={index} {...reports} />
-            ))}
+            <Reach />
+            <Faq />
 
             <Future />
 

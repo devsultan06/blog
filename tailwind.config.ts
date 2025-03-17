@@ -23,6 +23,7 @@ export default {
         "max-500": { max: "500px" },
         "max-400": { max: "400px" },
         "max-700": { max: "700px" },
+        "max-800": { max: "800px" },
         "max-900": { max: "900px" },
         "max-1000": { max: "1000px" },
       },
