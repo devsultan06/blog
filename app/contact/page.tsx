@@ -69,15 +69,11 @@ const Contact = () => {
                 </div>
             </div>
 
-            <ReportHeader />
 
             {reportdata.map((reports, index) => (
                 <Reports key={index} {...reports} />
             ))}
 
-
-
-            <Analysis />
             <Future />
 
         </div>

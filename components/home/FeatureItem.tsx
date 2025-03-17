@@ -30,3 +30,4 @@ export const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, descripti
   );
 };
 
+export default FeatureItem;
