@@ -60,7 +60,7 @@ export default function NavBar() {
                     className={`relative  overflow-hidden bg-yellow text-black px-4 py-2 rounded-md 
                             hover:bg-opacity-80 transition duration-300 ease-in-out
                             max-700:absolute max-700:top-[300px] max-700:transition-all 
-                            ${isOpen ? "max-700:opacity-100 ml-[-285px] flex items-start" : "max-700:opacity-0 max-700:pointer-events-none"}
+                            ${isOpen ? "max-700:opacity-1 ml-[-280px] max-500:ml-[-230px]  flex items-start" : "max-700:opacity-0 max-700:pointer-events-none"}
                             group`
                     }
                 >

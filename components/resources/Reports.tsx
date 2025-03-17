@@ -75,13 +75,13 @@ export const Reports: React.FC<PodcastResource> = ({
                     </div>
                 </div>
 
-                <div className="flex justify-between mt-[20px] gap-4 max-900:flex max-900:flex-wrap">
-                    <div className="bg-black w-1/3 p-[15px] rounded-[10px] border border-dark20 max-900:w-[48%] max-900:mb-[10px]">
+                <div className="flex justify-between mt-[20px] gap-4 max-900:block max-900:w-full">
+                    <div className="bg-black w-1/3 p-[15px] rounded-[10px] border max-900:w-full border-dark20 max-900:mb-[10px]">
                         <p className="text-grey60 text-[15px] mb-[5px]">Publication Date</p>
                         <h1 className="font-semibold">{pubDate}</h1>
                     </div>
 
-                    <div className="bg-black w-1/3 p-[15px] rounded-[10px] border border-dark20 max-900:w-[48%] max-900:mb-[10px]">
+                    <div className="bg-black w-1/3 p-[15px] rounded-[10px] border  max-900:w-full border-dark20  max-900:mb-[10px]">
                         <p className="text-grey60 text-[15px] mb-[5px]">Category</p>
                         <h1 className="font-semibold">{category}</h1>
                     </div>

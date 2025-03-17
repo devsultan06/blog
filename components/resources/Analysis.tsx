@@ -34,10 +34,10 @@ export const Analysis = () => {
 
                         </button>
 
-                        <button className="relative overflow-hidden max-900:w-[100%] border border-dark20 text-lightgrey px-4 py-3 rounded-md transition duration-300 ease-in-out group">
+                        <button className="relative overflow-hidden max-900:w-[100%] border border-dark20 text-lightgrey px-6 py-3 rounded-md transition duration-300 ease-in-out group">
                             <span className="absolute inset-0 bg-yellow scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
 
-                            <span className="relative z-10 font-medium group-hover:text-black transition duration-300">Download PDF Now</span>
+                            <span className="relative z-10 font-medium group-hover:text-black transition duration-300 whitespace-nowrap flex justify-center">Download PDF Now</span>
 
                         </button>
                     </div>
