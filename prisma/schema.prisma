@@ -6,11 +6,24 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
 model Post {
   id        String   @id @default(uuid())
   title     String
   content   String?
   imageUrl  String?
   createdAt DateTime @default(now())
+
+  likes     Int      @default(0) // Track the number of likes
+  shares    Int      @default(0) // Track the number of shares
+
+  comments  Comment[] // One-to-many relationship with comments
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  content   String
+  createdAt DateTime @default(now())
+  
+  postId    String   // Foreign key linking to Post
+  post      Post     @relation(fields: [postId], references: [id])
 }
