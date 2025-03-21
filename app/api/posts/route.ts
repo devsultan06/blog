@@ -3,10 +3,14 @@ import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
-// GET method (fetch all posts)
+// GET method (fetch all posts with comments)
 export async function GET() {
   try {
-    const posts = await prisma.post.findMany();
+    const posts = await prisma.post.findMany({
+      include: {
+        comments: true, // Include related comments
+      },
+    });
     return NextResponse.json(posts);
   } catch {
     return NextResponse.json({ message: "Something went wrong" }, { status: 500 });
