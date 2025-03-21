@@ -5,7 +5,10 @@ import { TableOfContents } from "@components/blog/TableOfContents";
 import CustomImage from "@components/ui/CustomImage";
 import { useState } from "react";
 
-export default function Blog() {
+export default async function BlogPost({ params }: { params: { id: string } }) {
+    const { id } = params;
+
+
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleContent = () => {
