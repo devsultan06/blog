@@ -3,26 +3,44 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-// UPDATE method (update a post)
+
+export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+  try {
+    const post = await prisma.post.findUnique({
+      where: { id: params.id },
+      include: { comments: true }, 
+    });
+
+    if (!post) {
+      return NextResponse.json({ message: "Post not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(post);
+  } catch (error) {
+    return NextResponse.json({ message: "Something went wrong" }, { status: 500 });
+  }
+}
+
+
 export async function PUT(req: NextRequest, context: { params: { id: string } }) {
   try {
     const id = context.params?.id;
     if (!id) return NextResponse.json({ message: "ID is required" }, { status: 400 });
 
     const body = await req.json();
-    const { title, content, action } = body; // Action can be "like" or "share"
+    const { title, content, action } = body; 
 
     let updatedPost;
 
     if (action === "like") {
       updatedPost = await prisma.post.update({
         where: { id },
-        data: { likes: { increment: 1 } }, // Increment likes
+        data: { likes: { increment: 1 } }, 
       });
     } else if (action === "share") {
       updatedPost = await prisma.post.update({
         where: { id },
-        data: { shares: { increment: 1 } }, // Increment shares
+        data: { shares: { increment: 1 } },
       });
     } else if (title || content) {
       updatedPost = await prisma.post.update({

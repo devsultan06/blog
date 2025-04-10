@@ -31,7 +31,7 @@ export default function BloggerModal() {
                         initial={{ opacity: 0, y: 50, rotate: -5 }}
                         animate={{ opacity: 1, y: 0, rotate: 0 }}
                         exit={{ opacity: 0, y: 50 }}
-                        transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+                        transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
                         className="fixed bottom-5 right-5 max-900:right-2 max-w-sm bg-black text-white p-6 rounded-lg shadow-2xl border border-gray-700 z-30 overflow-hidden"
                     >
                         {showConfetti && <Confetti numberOfPieces={300} recycle={false} />}
@@ -56,7 +56,7 @@ export default function BloggerModal() {
                         <motion.p
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: 0.5, duration: 1 }}
+                            transition={{ delay: 0.2, duration: 1 }}
                             className="text-gray-300 text-center mt-3 text-sm"
                         >
                             Love writing? Share your thoughts with the world, build your audience,
