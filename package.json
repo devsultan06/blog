@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.14.3",
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -19,7 +20,7 @@
     "emailjs-com": "^3.2.0",
     "formik": "^2.4.6",
     "framer-motion": "^12.5.0",
-    "next": "15.1.7",
+    "next": "^15.2.3",
     "react": "^19.0.0",
     "react-confetti": "^6.4.0",
     "react-dom": "^19.0.0",
