@@ -5,10 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/navLinks";
 import { useState, useEffect } from "react";
+import { useUser, SignOutButton, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"; // Import SignOutButton from Clerk
 
 export default function NavBar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    const { user, isSignedIn } = useUser(); // Get user info from Clerk
 
     const handleLinkClick = () => {
         setIsOpen(false);
@@ -23,6 +25,7 @@ export default function NavBar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isOpen]);
 
+    console.log(user, isSignedIn)
     return (
         <div className={`flex fixed top-[40px] left-0 z-50 right-0 items-center justify-between bg-black text-white py-4 px-[100px] border-t border-b border-dark20 max-900:px-[20px] transition-all duration-300`}>
             <Link href="/">
@@ -35,8 +38,7 @@ export default function NavBar() {
             <nav className={`flex items-center gap-6 max-900:gap-2 
                 max-700:absolute max-700:flex-col max-700:top-[69px] max-700:left-[0px] max-700:w-full max-700:bg-black max-700:items-start max-700:px-[20px]
                 max-700:overflow-hidden transition-all duration-300 ease-in-out
-                ${isOpen ? "max-700:h-[300px] py-[30px]" : "max-700:h-0"}
-            `}>
+                ${isOpen ? "max-700:h-[300px] py-[30px]" : "max-700:h-0"}`}>
                 {navLinks.map((link) => (
                     <Link
                         key={link.href}
@@ -50,27 +52,33 @@ export default function NavBar() {
                     >
                         {link.name}
                     </Link>
-
                 ))}
             </nav>
 
+            {/* SignIn / SignOut buttons */}
+            <div className={`flex gap-4 max-700:absolute max-700:left-[2px] max-700:top-[300px] max-700:bg-black max-700:items-center max-700:px-[20px] transition-all duration-300 ease-in-out ${isOpen ? "max-700:opacity-100 max-700:flex" : "max-700:opacity-0 max-700:pointer-events-none"}`}>
+                {isSignedIn ? (
+                    <div className="absolute right-0 top-[30px] flex items-center gap-4">
+                        <UserButton />
 
-            <Link href="/contact" onClick={handleLinkClick} >
-                <button
-                    className={`relative  overflow-hidden bg-yellow text-black px-4 py-2 rounded-md 
-                            hover:bg-opacity-80 transition duration-300 ease-in-out
-                            max-700:absolute max-700:top-[300px] max-700:transition-all 
-                            ${isOpen ? "max-700:opacity-1 ml-[-280px] max-500:ml-[-230px]  flex items-start" : "max-700:opacity-0 max-700:pointer-events-none"}
-                            group`
-                    }
-                >
-                    <span className="relative z-10">Contact Us</span>
-                    <span className="absolute inset-0 bg-yellow bg-opacity-80  w-full h-full scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
-                </button>
-            </Link>
+                    </div>
+
+                ) : (
+                    <>
+                        <SignInButton>
+                            <button
+                                className="bg-yellow text-black px-4 py-2 rounded-md transition hover:bg-opacity-80"
+                            >
+                                Sign In
+                            </button>
+                        </SignInButton>
+
+                    </>
+                )}
+            </div>
 
 
-
+            {/* Mobile menu toggle */}
             <button
                 className="hidden max-700:block text-white"
                 onClick={() => setIsOpen(!isOpen)}

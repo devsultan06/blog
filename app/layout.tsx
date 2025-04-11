@@ -4,6 +4,14 @@ import NavBar from "@components/layout/NavBar";
 import Footer from "@components/layout/Footer";
 import BloggerModal from "@components/layout/BloggerModal";
 import { SubscribeBanner } from "@components/layout/SubscribeBanner";
+import {
+    ClerkProvider,
+    SignInButton,
+    SignUpButton,
+    SignedIn,
+    SignedOut,
+    UserButton,
+} from '@clerk/nextjs'
 
 export const metadata: Metadata = {
     title: "AI Blog",
@@ -16,23 +24,25 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <head>
-                <link rel="icon" href="/images/logo3.png" type="image/x-icon" />
+        <ClerkProvider>
+            <html lang="en">
+                <head>
+                    <link rel="icon" href="/images/logo3.png" type="image/x-icon" />
 
-            </head>
+                </head>
 
-            <body
-            >
-                <SubscribeBanner />
-                <NavBar />
-                <BloggerModal />
-                <div className="pt-[100px] bg-deepblack">
-                    {children}
+                <body
+                >
+                    <SubscribeBanner />
+                    <NavBar />
+                    <BloggerModal />
+                    <div className="pt-[100px] bg-deepblack">
+                        {children}
 
-                </div>
-                <Footer />
-            </body>
-        </html>
+                    </div>
+                    <Footer />
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }
