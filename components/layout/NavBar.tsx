@@ -58,7 +58,7 @@ export default function NavBar() {
             {/* SignIn / SignOut buttons */}
             <div className={`flex gap-4 max-700:absolute max-700:left-[2px] max-700:top-[300px] max-700:bg-black max-700:items-center max-700:px-[20px] transition-all duration-300 ease-in-out ${isOpen ? "max-700:opacity-100 max-700:flex" : "max-700:opacity-0 max-700:pointer-events-none"}`}>
                 {isSignedIn ? (
-                    <div className="absolute right-0 top-[30px] flex items-center gap-4">
+                    <div className="max:700:absolute right-0 top-[30px] flex items-center gap-4">
                         <UserButton />
 
                     </div>
@@ -78,7 +78,6 @@ export default function NavBar() {
             </div>
 
 
-            {/* Mobile menu toggle */}
             <button
                 className="hidden max-700:block text-white"
                 onClick={() => setIsOpen(!isOpen)}
