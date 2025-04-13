@@ -2,7 +2,6 @@
 import { useUser } from "@clerk/nextjs";
 import { useFormik } from "formik";
 import InputField from "@components/ui/InputField";
-import { useState } from "react";
 import * as Yup from "yup";
 
 export default function RegisterPage() {
