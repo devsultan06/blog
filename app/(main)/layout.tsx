@@ -1,9 +1,6 @@
 // app/(main)/layout.tsx
 import type { Metadata } from "next";
 
-import {
-    ClerkProvider,
-} from '@clerk/nextjs';
 import { SubscribeBanner } from "@components/layout/SubscribeBanner";
 import NavBar from "@components/layout/NavBar";
 import BloggerModal from "@components/layout/BloggerModal";
@@ -20,7 +17,7 @@ export default function MainLayout({
     children: React.ReactNode;
 }) {
     return (
-        <ClerkProvider>
+        <>
             <SubscribeBanner />
             <NavBar />
             <BloggerModal />
@@ -28,6 +25,6 @@ export default function MainLayout({
                 {children}
             </div>
             <Footer />
-        </ClerkProvider>
+        </>
     );
 }

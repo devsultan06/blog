@@ -27,3 +27,15 @@ model Comment {
   postId    String   // Foreign key linking to Post
   post      Post     @relation(fields: [postId], references: [id])
 }
+
+model User {
+  id        Int    @id @default(autoincrement())
+  userId    String @unique
+  fullName  String
+  username  String
+  niche     String
+  bio       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
