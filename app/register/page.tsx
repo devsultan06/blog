@@ -3,6 +3,9 @@ import { useUser } from "@clerk/nextjs";
 import { useFormik } from "formik";
 import InputField from "@components/ui/InputField";
 import * as Yup from "yup";
+import { tab2 as nicheOptions } from "@/data/tabs";
+import SelectInput from "@components/register/SelectInput";
+
 
 export default function RegisterPage() {
     const { user, isLoaded } = useUser();
@@ -94,17 +97,15 @@ function OnboardingForm({ user }: { user: any }) {
                 error={!!(errors.username && touched.username)}
                 helperText={typeof errors.username === "string" ? errors.username : undefined} />
 
-
-            <InputField
-                type="text"
+            <SelectInput
                 label="Preferred Niche"
                 name="niche"
-                id="niche"
                 value={values.niche}
-                handleInputChange={handleChangeWithFormik}
+                options={nicheOptions}
+                handleChange={handleChange}
                 handleBlur={handleBlur}
                 error={!!(errors.niche && touched.niche)}
-                helperText={errors.niche}
+                helperText={typeof errors.niche === "string" ? errors.niche : undefined}
             />
 
             <InputField
@@ -122,7 +123,7 @@ function OnboardingForm({ user }: { user: any }) {
 
             <button
                 type="submit"
-                className="bg-yellow text-black hover:bg-blue-700 px-4 py-2 rounded font-medium"
+                className="bg-yellow text-black hover:opacity-80 px-4 py-2 rounded font-medium"
             >
                 Finish Registration
             </button>

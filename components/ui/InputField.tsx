@@ -59,24 +59,23 @@ const InputField = ({
       sx={{
         width: "100%",
         marginBottom: "16px",
-        border : "1px solid #333333",
         "& .MuiOutlinedInput-root": {
           color: "white",
           "& fieldset": {
-            borderColor: error ? "red" : "#333333",
+            borderColor: error ? "#FF0000" : "#333333",
           },
           "&:hover fieldset": {
-            borderColor: error ? "red" : "#333333",
+            borderColor: error ? "#FF0000" : "#333333",
           },
           "&.Mui-focused fieldset": {
-            borderColor: error ? "red" : "#333333",
+            borderColor: error ? "#FF0000" : "#333333",
           },
         },
         "& .MuiInputLabel-root": {
-          color: error ? "red" : "white",
+          color: error ? "#FF0000" : "white",
         },
         "& .MuiInputLabel-root.Mui-focused": {
-          color: error ? "red" : "white",
+          color: error ? "#FF0000" : "white",
         },
       }}
     />
