@@ -11,7 +11,7 @@ export default function RegisterPage() {
     const { user, isLoaded } = useUser();
 
     if (!isLoaded) {
-        return <div className="text-white p-4">Loading...</div>;
+        return <div className="text-white p-4">Loading....</div>;
     }
 
     return (
@@ -58,7 +58,7 @@ function OnboardingForm({ user }: { user: any }) {
             });
 
             if (response.ok) {
-                alert("Profile updated successfully!");
+                alert("Profile updated successfully");
             } else {
                 const data = await response.json();
                 console.error(data.message);
