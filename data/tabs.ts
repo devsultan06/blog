@@ -15,3 +15,12 @@ export const tab2 = [
     "Enviroment",
     "Sports",
 ];
+
+export const nicheOptions = [
+    "All",
+    "Technology",
+    "Politics",
+    "Health",
+    "Enviroment",
+    "Sports",
+];
