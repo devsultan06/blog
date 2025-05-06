@@ -7,6 +7,7 @@ import SelectInput from "@components/register/SelectInput";
 import { onboardingValidationSchema } from "@/schemas/onboardingSchema";
 import ReactSelectInput from "@components/register/SelectInput";
 import { nicheOptions } from "@/data/tabs";
+import { useState } from "react";
 
 
 export default function RegisterPage() {
@@ -25,6 +26,7 @@ export default function RegisterPage() {
 }
 
 function OnboardingForm({ user }: { user: any }) {
+    const [submitting, setSubmitting] = useState(false);
 
     const {
         values,
@@ -44,21 +46,32 @@ function OnboardingForm({ user }: { user: any }) {
         },
         validationSchema: onboardingValidationSchema,
         onSubmit: async (values) => {
-            const response = await fetch("/api/onboarding", {
-                method: "POST",
-                body: JSON.stringify({ ...values, userId: user.id }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
+            setSubmitting(true);
+            try {
+                const response = await fetch("/api/onboarding", {
+                    method: "POST",
+                    body: JSON.stringify({ ...values, userId: user.id }),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
 
-            if (response.ok) {
-                alert("Profile updated successfully");
-            } else {
-                const data = await response.json();
-                console.error(data.message);
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log("✅ Profile updated successfully:", data);
+                    alert("Profile updated successfully");
+                } else {
+                    const errorData = await response.json();
+                    console.error("❌ Failed to update profile:", errorData.message || errorData);
+                    alert(errorData.message)
+                }
+            } catch (error) {
+                console.error("⚠️ Error during onboarding submission:", error);
+            } finally {
+                setSubmitting(false);
             }
-        },
+        }
+
     });
 
     const handleChangeWithFormik = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -118,10 +131,13 @@ function OnboardingForm({ user }: { user: any }) {
 
             <button
                 type="submit"
-                className="bg-yellow text-black hover:opacity-80 px-4 py-2 rounded font-medium"
+                className={`bg-yellow text-black px-4 py-2 rounded font-medium transition-all duration-300 ${submitting ? "animate-pulse opacity-60 cursor-not-allowed" : "hover:opacity-80"
+                    }`}
+                disabled={submitting}
             >
-                Finish Registration
+                {submitting ? "Submitting..." : "Finish Registration"}
             </button>
+
         </form>
     );
 }

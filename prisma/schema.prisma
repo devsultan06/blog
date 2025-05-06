@@ -32,7 +32,7 @@ model User {
   id        Int    @id @default(autoincrement())
   userId    String @unique
   fullName  String
-  username  String
+  username  String @unique
   niche     String
   bio       String
   createdAt DateTime @default(now())
