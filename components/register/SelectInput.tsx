@@ -1,44 +1,77 @@
-// components/ui/SelectInput.tsx
-type SelectInputProps = {
+import Select from 'react-select';
+
+type Option = {
+    label: string;
+    value: string;
+};
+
+type ReactSelectInputProps = {
     label: string;
     name: string;
     value: string;
     options: string[];
-    handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-    handleBlur?: (e: React.FocusEvent<HTMLSelectElement>) => void;
+    onChange: (field: string, value: any) => void;
+    onBlur?: (field: string, touched?: boolean, shouldValidate?: boolean) => void;
     error?: boolean;
     helperText?: string;
 };
 
-export default function SelectInput({
+export default function ReactSelectInput({
     label,
     name,
     value,
     options,
-    handleChange,
-    handleBlur,
+    onChange,
+    onBlur,
     error,
     helperText,
-}: SelectInputProps) {
+}: ReactSelectInputProps) {
+    const formattedOptions: Option[] = options.map(opt => ({
+        value: opt,
+        label: opt,
+    }));
+
+    const selectedOption = formattedOptions.find(opt => opt.value === value);
+
     return (
-        <div className="space-y-1">
-            <select
-                name={name}
-                id={name}
-                value={value}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={`w-full py-[17px] px-[10px] cursor-pointer outline-none rounded bg-transparent text-white border ${error ? "border-[#FF0000]" : "border-[#333333]"
-                    }`}
-            >
-                <option value="">Select a niche</option>
-                {options.map((opt, idx) => (
-                    <option key={idx} value={opt} className="bg-black text-white cursor-pointer">
-                        {opt}
-                    </option>
-                ))}
-            </select>
-            {error && helperText && <p className="text-[#d32f2f] text-[11px] ml-[13px]">{helperText}</p>}
+        <div className="space-y-1 z-[50] relative">
+            <label className="block font-medium mb-1">{label}</label>
+            <Select
+                options={formattedOptions}
+                value={selectedOption}
+                onChange={(option) => onChange(name, option?.value)}
+                onBlur={() => onBlur?.(name, true)}
+                classNamePrefix="react-select"
+                styles={{
+                    control: (base) => ({
+                        ...base,
+                        backgroundColor: 'transparent',
+                        borderColor: error ? '#FF0000' : '#333',
+                        color: '#fff',
+                        cursor: 'pointer',
+                        padding: '0.5rem 0.5rem ',
+                    }),
+                    menu: (base) => ({
+                        ...base,
+                        backgroundColor: '#000',
+                    }),
+                    singleValue: (base) => ({
+                        ...base,
+                        color: '#fff',
+                        
+                    }),
+                    option: (base, { isFocused }) => ({
+                        ...base,
+                        backgroundColor: isFocused ? '#444' : '#000',
+                        borderRadius: '0.5rem',
+                        color: '#fff',
+                        cursor: 'pointer',
+                    }),
+                }}
+            />
+            {error && helperText && (
+                <p className="text-[#d32f2f] text-[11px] ml-[13px]">{helperText}</p>
+            )}
         </div>
     );
 }

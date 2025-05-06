@@ -3,8 +3,10 @@ import { useUser } from "@clerk/nextjs";
 import { useFormik } from "formik";
 import InputField from "@components/ui/InputField";
 import * as Yup from "yup";
-import { tab2 as nicheOptions } from "@/data/tabs";
 import SelectInput from "@components/register/SelectInput";
+import { onboardingValidationSchema } from "@/schemas/onboardingSchema";
+import ReactSelectInput from "@components/register/SelectInput";
+import { nicheOptions } from "@/data/tabs";
 
 
 export default function RegisterPage() {
@@ -15,7 +17,7 @@ export default function RegisterPage() {
     }
 
     return (
-        <div className="register h-[100vh] text-white bg-deepblack">
+        <div className="register h-[100vh] flex flex-col justify-center text-white bg-deepblack">
             <h1 className="text-3xl font-bold text-center pt-16 font-kumbh max-700:text-2xl">Welcome to the AI Blogger Onboarding</h1>
             <OnboardingForm user={user} />
         </div>
@@ -23,13 +25,6 @@ export default function RegisterPage() {
 }
 
 function OnboardingForm({ user }: { user: any }) {
-    const validationSchema = Yup.object({
-        fullName: Yup.string().required("Full Name is required"),
-        lastName: Yup.string().required("Last Name is required"),
-        username: Yup.string().required("Username is required"),
-        niche: Yup.string().required("Preferred Niche is required"),
-        bio: Yup.string().required("Bio is required"),
-    });
 
     const {
         values,
@@ -47,7 +42,7 @@ function OnboardingForm({ user }: { user: any }) {
             niche: "",
             bio: "",
         },
-        validationSchema,
+        validationSchema: onboardingValidationSchema,
         onSubmit: async (values) => {
             const response = await fetch("/api/onboarding", {
                 method: "POST",
@@ -97,13 +92,13 @@ function OnboardingForm({ user }: { user: any }) {
                 error={!!(errors.username && touched.username)}
                 helperText={typeof errors.username === "string" ? errors.username : undefined} />
 
-            <SelectInput
+            <ReactSelectInput
                 label="Preferred Niche"
                 name="niche"
                 value={values.niche}
                 options={nicheOptions}
-                handleChange={handleChange}
-                handleBlur={handleBlur}
+                onChange={setFieldValue}
+                onBlur={handleBlur}
                 error={!!(errors.niche && touched.niche)}
                 helperText={typeof errors.niche === "string" ? errors.niche : undefined}
             />

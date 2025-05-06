@@ -59,6 +59,8 @@ const InputField = ({
       sx={{
         width: "100%",
         marginBottom: "16px",
+        position: "relative",
+        zIndex:10,
         "& .MuiOutlinedInput-root": {
           color: "white",
           "& fieldset": {
