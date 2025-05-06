@@ -60,6 +60,7 @@ function OnboardingForm({ user }: { user: any }) {
                     const data = await response.json();
                     console.log("✅ Profile updated successfully:", data);
                     alert("Profile updated successfully");
+                    
                 } else {
                     const errorData = await response.json();
                     console.error("❌ Failed to update profile:", errorData.message || errorData);
