@@ -35,7 +35,7 @@ export default function ReactSelectInput({
 
     return (
         <div className="space-y-1 z-[50] relative">
-            <label className="block font-medium mb-1">{label}</label>
+            <label className="block font-medium mb-1 text-white">{label}</label>
             <Select
                 options={formattedOptions}
                 value={selectedOption}

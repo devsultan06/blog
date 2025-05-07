@@ -8,6 +8,7 @@ import { onboardingValidationSchema } from "@/schemas/onboardingSchema";
 import ReactSelectInput from "@components/register/SelectInput";
 import { nicheOptions } from "@/data/tabs";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 
 export default function RegisterPage() {
@@ -36,6 +37,7 @@ function OnboardingForm({ user }: { user: any }) {
         handleBlur,
         handleSubmit,
         setFieldValue,
+        resetForm
     } = useFormik({
         initialValues: {
             fullName: "",
@@ -59,15 +61,29 @@ function OnboardingForm({ user }: { user: any }) {
                 if (response.ok) {
                     const data = await response.json();
                     console.log("✅ Profile updated successfully:", data);
-                    alert("Profile updated successfully");
-                    
+                    toast.success("Profile updated successfully");
+                    resetForm({
+                        values: {
+                            fullName: "",
+                            lastName: "",
+                            username: "",
+                            niche: "",
+                            bio: "",
+                        },
+                    });
                 } else {
                     const errorData = await response.json();
                     console.error("❌ Failed to update profile:", errorData.message || errorData);
-                    alert(errorData.message)
+                    if (errorData.message === "Username already taken") {
+                        toast.error("Username already taken")
+                    } else if (errorData.message === "User already exists") {
+                        toast.error("User already exists")
+                    } else
+                        toast.error("Something went wrong")
                 }
             } catch (error) {
                 console.error("⚠️ Error during onboarding submission:", error);
+                toast.error("⚠️ Error during onboarding submission")
             } finally {
                 setSubmitting(false);
             }
